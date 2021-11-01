@@ -1,0 +1,33 @@
+{
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "pnpm -C examples dev",
+    "build": "gulp -f build/gulpfile.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "3d-force-graph": "^1.70.5",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "@types/gulp": "^4.0.9",
+    "@types/node": "^16.11.2",
+    "fast-glob": "^3.2.7",
+    "force-graph": "^1.42.4",
+    "gulp": "^4.0.2",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "rollup": "^2.58.3",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "rollup-plugin-vue": "^6.0.0",
+    "sucrase": "^3.20.3",
+    "ts-morph": "^12.0.0",
+    "typescript": "^4.4.4",
+    "vue": "^3.2.20"
+  },
+  "dependencies": {
+    "@vue-force-graph/components": "workspace:^1.0.0",
+    "@vue-force-graph/utils": "workspace:^1.0.0"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "vue-force-graph",
+  "version": "0.1.0",
+  "description": "force graph component by vue",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
