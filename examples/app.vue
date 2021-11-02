@@ -1,11 +1,10 @@
 <template>
-  <!-- <VueForceGraph3D :graphData="graphData"></VueForceGraph3D> -->
+  <VueForceGraph3D :graphData="graphData"></VueForceGraph3D>
   <!-- <VueForceGraph2D :graphData="graphData"></VueForceGraph2D> -->
-  <VueForceGraphAR :graphData="graphData"></VueForceGraphAR>
+  <!-- <VueForceGraphAR :graphData="graphData"></VueForceGraphAR> -->
+  <!-- <VueForceGraphVR :graphData="graphData"></VueForceGraphVR> -->
 </template>
 <script lang="ts">
-// @ts-ignore
-// import VueForceGraph3D from "@vue-force-graph/3d";
 import { defineComponent, reactive, toRefs } from "vue";
 function genRandomTree(N = 300, reverse = false) {
   return {

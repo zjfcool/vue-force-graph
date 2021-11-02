@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "3d-force-graph-ar": "^1.7.1",
+    "3d-force-graph-vr": "^2.0.7",
     "@vue-force-graph/components": "workspace:^1.0.0",
     "@vue-force-graph/utils": "workspace:^1.0.0"
   }
