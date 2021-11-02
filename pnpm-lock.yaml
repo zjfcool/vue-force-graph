@@ -11,6 +11,7 @@ importers:
       '@vue-force-graph/components': workspace:^1.0.0
       '@vue-force-graph/utils': workspace:^1.0.0
       3d-force-graph: ^1.70.5
+      3d-force-graph-ar: ^1.7.1
       fast-glob: ^3.2.7
       force-graph: ^1.42.4
       gulp: ^4.0.2
@@ -25,6 +26,7 @@ importers:
     dependencies:
       '@vue-force-graph/components': link:packages/components
       '@vue-force-graph/utils': link:packages/utils
+      3d-force-graph-ar: registry.npmmirror.com/3d-force-graph-ar/1.7.1
     devDependencies:
       '@rollup/plugin-commonjs': registry.npmmirror.com/@rollup/plugin-commonjs/21.0.1_rollup@2.58.3
       '@rollup/plugin-node-resolve': registry.npmmirror.com/@rollup/plugin-node-resolve/13.0.6_rollup@2.58.3
@@ -666,12 +668,6 @@ packages:
     version: 3.0.1
     engines: {node: '>=12'}
 
-  registry.nlark.com/d3-format/3.0.1:
-    resolution: {integrity: sha1-5BuBsqt5J3FB7BQEql0FAB2mQIQ=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/d3-format/download/d3-format-3.0.1.tgz}
-    name: d3-format
-    version: 3.0.1
-    engines: {node: '>=12'}
-
   registry.nlark.com/d3-interpolate/3.0.1:
     resolution: {integrity: sha1-PEeqWzLFs9+1bvP9Q0IHimMrQA0=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/d3-interpolate/download/d3-interpolate-3.0.1.tgz}
     name: d3-interpolate
@@ -679,12 +675,6 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       d3-color: registry.nlark.com/d3-color/3.0.1
-
-  registry.nlark.com/d3-quadtree/3.0.1:
-    resolution: {integrity: sha1-bco+i+Kzk8mp1RTau9gKkt7vGk8=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/d3-quadtree/download/d3-quadtree-3.0.1.tgz}
-    name: d3-quadtree
-    version: 3.0.1
-    engines: {node: '>=12'}
 
   registry.nlark.com/d3-scale-chromatic/3.0.0:
     resolution: {integrity: sha1-FbTOuMorsNy20aZB7gPVnDtiN2o=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/d3-scale-chromatic/download/d3-scale-chromatic-3.0.0.tgz}
@@ -700,22 +690,6 @@ packages:
     name: d3-selection
     version: 3.0.0
     engines: {node: '>=12'}
-
-  registry.nlark.com/d3-time-format/4.0.0:
-    resolution: {integrity: sha1-kw3thqnedhcCNEdg2KJXU0Z/KLc=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/d3-time-format/download/d3-time-format-4.0.0.tgz}
-    name: d3-time-format
-    version: 4.0.0
-    engines: {node: '>=12'}
-    dependencies:
-      d3-time: registry.nlark.com/d3-time/3.0.0
-
-  registry.nlark.com/d3-time/3.0.0:
-    resolution: {integrity: sha1-ZZcsuYri1JVO9cky6HBAYTNdSXU=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/d3-time/download/d3-time-3.0.0.tgz}
-    name: d3-time
-    version: 3.0.0
-    engines: {node: '>=12'}
-    dependencies:
-      d3-array: registry.npmmirror.com/d3-array/3.1.1
 
   registry.nlark.com/d3-timer/3.0.1:
     resolution: {integrity: sha1-YoTSonCChbGrt+IB7aQ4CvNeY7A=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/d3-timer/download/d3-timer-3.0.1.tgz}
@@ -3135,6 +3109,17 @@ packages:
       object.assign: registry.nlark.com/object.assign/4.1.2
     dev: true
 
+  registry.npmmirror.com/3d-force-graph-ar/1.7.1:
+    resolution: {integrity: sha1-rUpZk73+v34pJWmuzYtWIMaNdvE=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/3d-force-graph-ar/download/3d-force-graph-ar-1.7.1.tgz}
+    name: 3d-force-graph-ar
+    version: 1.7.1
+    dependencies:
+      aframe-forcegraph-component: registry.npmmirror.com/aframe-forcegraph-component/3.0.2
+      kapsule: registry.npmmirror.com/kapsule/1.13.4
+    transitivePeerDependencies:
+      - three
+    dev: false
+
   registry.npmmirror.com/3d-force-graph/1.70.5:
     resolution: {integrity: sha1-KKYjV292oTHO10xVne2PGDvr38Y=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/3d-force-graph/download/3d-force-graph-1.70.5.tgz}
     name: 3d-force-graph
@@ -3386,6 +3371,17 @@ packages:
     name: accessor-fn
     version: 1.3.1
 
+  registry.npmmirror.com/aframe-forcegraph-component/3.0.2:
+    resolution: {integrity: sha1-Rk9AMp90/SSQtSy7uXdUHN4DVgE=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/aframe-forcegraph-component/download/aframe-forcegraph-component-3.0.2.tgz}
+    name: aframe-forcegraph-component
+    version: 3.0.2
+    dependencies:
+      accessor-fn: registry.npmmirror.com/accessor-fn/1.3.1
+      three-forcegraph: registry.npmmirror.com/three-forcegraph/1.39.1
+    transitivePeerDependencies:
+      - three
+    dev: false
+
   registry.npmmirror.com/ansi-gray/0.1.1:
     resolution: {integrity: sha1-KWLPVOyXksSFEKPetSRDaGHvclE=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/ansi-gray/download/ansi-gray-0.1.1.tgz}
     name: ansi-gray
@@ -3526,13 +3522,34 @@ packages:
       d3-binarytree: registry.npmmirror.com/d3-binarytree/0.2.0
       d3-dispatch: registry.nlark.com/d3-dispatch/3.0.1
       d3-octree: registry.npmmirror.com/d3-octree/0.2.0
-      d3-quadtree: registry.nlark.com/d3-quadtree/3.0.1
+      d3-quadtree: registry.npmmirror.com/d3-quadtree/3.0.1
       d3-timer: registry.nlark.com/d3-timer/3.0.1
+
+  registry.npmmirror.com/d3-format/3.0.1:
+    resolution: {integrity: sha1-5BuBsqt5J3FB7BQEql0FAB2mQIQ=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/d3-format/download/d3-format-3.0.1.tgz}
+    name: d3-format
+    version: 3.0.1
+    engines: {node: '>=12'}
 
   registry.npmmirror.com/d3-octree/0.2.0:
     resolution: {integrity: sha1-07PleHM80Lu3tqFfgLDXs4qy5Uw=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/d3-octree/download/d3-octree-0.2.0.tgz}
     name: d3-octree
     version: 0.2.0
+
+  registry.npmmirror.com/d3-quadtree/3.0.1:
+    resolution: {integrity: sha1-bco+i+Kzk8mp1RTau9gKkt7vGk8=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/d3-quadtree/download/d3-quadtree-3.0.1.tgz}
+    name: d3-quadtree
+    version: 3.0.1
+    engines: {node: '>=12'}
+
+  registry.npmmirror.com/d3-scale-chromatic/3.0.0:
+    resolution: {integrity: sha1-FbTOuMorsNy20aZB7gPVnDtiN2o=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/d3-scale-chromatic/download/d3-scale-chromatic-3.0.0.tgz}
+    name: d3-scale-chromatic
+    version: 3.0.0
+    engines: {node: '>=12'}
+    dependencies:
+      d3-color: registry.nlark.com/d3-color/3.0.1
+      d3-interpolate: registry.nlark.com/d3-interpolate/3.0.1
 
   registry.npmmirror.com/d3-scale/4.0.2:
     resolution: {integrity: sha1-grOOjo/3CAdk+Nzsd71L45Nok5Y=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/d3-scale/download/d3-scale-4.0.2.tgz}
@@ -3541,10 +3558,26 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       d3-array: registry.npmmirror.com/d3-array/3.1.1
-      d3-format: registry.nlark.com/d3-format/3.0.1
+      d3-format: registry.npmmirror.com/d3-format/3.0.1
       d3-interpolate: registry.nlark.com/d3-interpolate/3.0.1
-      d3-time: registry.nlark.com/d3-time/3.0.0
-      d3-time-format: registry.nlark.com/d3-time-format/4.0.0
+      d3-time: registry.npmmirror.com/d3-time/3.0.0
+      d3-time-format: registry.npmmirror.com/d3-time-format/4.0.0
+
+  registry.npmmirror.com/d3-time-format/4.0.0:
+    resolution: {integrity: sha1-kw3thqnedhcCNEdg2KJXU0Z/KLc=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/d3-time-format/download/d3-time-format-4.0.0.tgz}
+    name: d3-time-format
+    version: 4.0.0
+    engines: {node: '>=12'}
+    dependencies:
+      d3-time: registry.npmmirror.com/d3-time/3.0.0
+
+  registry.npmmirror.com/d3-time/3.0.0:
+    resolution: {integrity: sha1-ZZcsuYri1JVO9cky6HBAYTNdSXU=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/d3-time/download/d3-time-3.0.0.tgz}
+    name: d3-time
+    version: 3.0.0
+    engines: {node: '>=12'}
+    dependencies:
+      d3-array: registry.npmmirror.com/d3-array/3.1.1
 
   registry.npmmirror.com/data-joint/1.2.4:
     resolution: {integrity: sha1-TY9EPXrj1CYmr++dppRSiOfbQ5A=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/data-joint/download/data-joint-1.2.4.tgz}
@@ -4166,6 +4199,25 @@ packages:
       any-promise: registry.nlark.com/any-promise/1.3.0
     dev: true
 
+  registry.npmmirror.com/three-forcegraph/1.39.1:
+    resolution: {integrity: sha1-jkuV0FmkPZx8AzBeBpDrE45vVVA=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/three-forcegraph/download/three-forcegraph-1.39.1.tgz}
+    name: three-forcegraph
+    version: 1.39.1
+    peerDependencies:
+      three: '>=0.118.3'
+    dependencies:
+      accessor-fn: registry.npmmirror.com/accessor-fn/1.3.1
+      d3-array: registry.npmmirror.com/d3-array/3.1.1
+      d3-force-3d: registry.npmmirror.com/d3-force-3d/3.0.2
+      d3-scale: registry.npmmirror.com/d3-scale/4.0.2
+      d3-scale-chromatic: registry.npmmirror.com/d3-scale-chromatic/3.0.0
+      data-joint: registry.npmmirror.com/data-joint/1.2.4
+      kapsule: registry.npmmirror.com/kapsule/1.13.4
+      ngraph.forcelayout: registry.npmmirror.com/ngraph.forcelayout/3.2.0
+      ngraph.graph: registry.npmmirror.com/ngraph.graph/19.1.0
+      tinycolor2: registry.nlark.com/tinycolor2/1.4.2
+    dev: false
+
   registry.npmmirror.com/three-forcegraph/1.39.1_three@0.133.1:
     resolution: {integrity: sha1-jkuV0FmkPZx8AzBeBpDrE45vVVA=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/three-forcegraph/download/three-forcegraph-1.39.1.tgz}
     id: registry.npmmirror.com/three-forcegraph/1.39.1
@@ -4178,7 +4230,7 @@ packages:
       d3-array: registry.npmmirror.com/d3-array/3.1.1
       d3-force-3d: registry.npmmirror.com/d3-force-3d/3.0.2
       d3-scale: registry.npmmirror.com/d3-scale/4.0.2
-      d3-scale-chromatic: registry.nlark.com/d3-scale-chromatic/3.0.0
+      d3-scale-chromatic: registry.npmmirror.com/d3-scale-chromatic/3.0.0
       data-joint: registry.npmmirror.com/data-joint/1.2.4
       kapsule: registry.npmmirror.com/kapsule/1.13.4
       ngraph.forcelayout: registry.npmmirror.com/ngraph.forcelayout/3.2.0

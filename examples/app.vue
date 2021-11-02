@@ -1,6 +1,7 @@
 <template>
-  <VueForceGraph3D :graphData="graphData"></VueForceGraph3D>
+  <!-- <VueForceGraph3D :graphData="graphData"></VueForceGraph3D> -->
   <!-- <VueForceGraph2D :graphData="graphData"></VueForceGraph2D> -->
+  <VueForceGraphAR :graphData="graphData"></VueForceGraphAR>
 </template>
 <script lang="ts">
 // @ts-ignore
