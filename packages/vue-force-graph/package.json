@@ -7,7 +7,24 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "vue",
+    "force",
+    "graph",
+    "3d",
+    "2d",
+    "vr",
+    "ar",
+    "three",
+    "webgl",
+    "canvas"
+  ],
+  "dependencies": {
+    "3d-force-graph-ar": "^1.7.1",
+    "3d-force-graph-vr": "^2.0.7",
+    "3d-force-graph": "^1.70.5",
+    "force-graph": "^1.42.4"
+  },
+  "author": "zjfcool",
   "license": "ISC"
 }

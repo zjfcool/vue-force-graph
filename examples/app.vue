@@ -1,6 +1,27 @@
 <template>
-  <VueForceGraph3D :graphData="graphData"></VueForceGraph3D>
-  <!-- <VueForceGraph2D :graphData="graphData"></VueForceGraph2D> -->
+  <VueForceGraph3D :graphData="graphData">
+    <ContextMenu v-slot="data" bindType="canvas">
+      <div @click="deleteItem(data)">删除</div>
+    </ContextMenu>
+    <ContextMenu bindType="node">
+      <Menu :data="menuData" @change="menuChange">hello</Menu>
+    </ContextMenu>
+    <ContextMenu v-slot="data" bindType="edge">
+      <div @click="deleteItem(data)">sfsf</div>
+    </ContextMenu>
+  </VueForceGraph3D>
+  <!-- <VueForceGraph2D :graphData="graphData">
+    <ContextMenu v-slot="data" bindType="canvas">
+      <div @click="deleteItem(data)">删除</div>
+    </ContextMenu>
+    <ContextMenu v-slot="data" bindType="node">
+      <div @click="deleteItem(data)">删aaa除</div>
+    </ContextMenu>
+    <ContextMenu v-slot="data" bindType="edge">
+      <div @click="deleteItem(data)">sfsf</div>
+    </ContextMenu>
+  </VueForceGraph2D> -->
+
   <!-- <VueForceGraphAR :graphData="graphData"></VueForceGraphAR> -->
   <!-- <VueForceGraphVR :graphData="graphData"></VueForceGraphVR> -->
 </template>
@@ -24,9 +45,27 @@ export default defineComponent({
   setup() {
     const state = reactive({
       graphData: genRandomTree(),
+      menuData: [
+        {
+          id: 0,
+          label: "hello",
+        },
+        {
+          id: 1,
+          label: "hhh",
+        },
+      ],
     });
+    const deleteItem = (data) => {
+      console.log(data);
+    };
+    const menuChange = (data) => {
+      console.log(data);
+    };
     return {
       ...toRefs(state),
+      deleteItem,
+      menuChange,
     };
   },
 });

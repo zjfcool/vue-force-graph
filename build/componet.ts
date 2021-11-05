@@ -12,6 +12,8 @@ import { pathRewriter, run } from './utils'
 import { Project, SourceFile, OutputFile } from 'ts-morph'
 import fs from 'fs/promises'
 import * as VueCompiler from '@vue/compiler-sfc'
+import pkg from '../packages/vue-force-graph/package.json'
+const { dependencies } = pkg
 async function buildEachComponent() {
     const files = glob.sync('*', {
         cwd: componentRoot,
@@ -23,7 +25,7 @@ async function buildEachComponent() {
             input,
             plugins: [nodeResolve(), vue(), ts(), commonjs()],
             external: (id) => {
-                return /^vue/.test(id) || /^@vue-force-graph/.test(id)
+                return /^vue/.test(id) || /^@vue-force-graph/.test(id) || Object.keys(dependencies).some(str => new RegExp(`^${str}$`).test(id))
             },
             preserveSymlinks: false
         }

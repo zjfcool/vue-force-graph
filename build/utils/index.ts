@@ -18,7 +18,6 @@ export const withTaskName = <T>(name: string, fn: T) => Object.assign(fn, {
 })
 export const pathRewriter = (format: string) => {
     return (id: string) => {
-        console.log(id, '==========', typeof id.replaceAll)
         id = id.replaceAll('@vue-force-graph', `vue-force-graph/${format}`)
         return id;
     }

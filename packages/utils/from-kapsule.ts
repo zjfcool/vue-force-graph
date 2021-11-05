@@ -1,4 +1,5 @@
 import { defineComponent, ref, h, watchEffect, onMounted, DefineComponent } from 'vue'
+import { useProvider, useGraphContext } from './hooks'
 function omit(target, args) {
     return Object.fromEntries(
         Object.keys(target)
@@ -29,6 +30,7 @@ export default function fromKapsule(kapsuleComponent: (options: any) => any, com
         setup(props, { expose, slots }) {
             const domEl = ref(null);
             const comp = kapsuleComponent(getConfigOptions());
+            useProvider(useGraphContext, comp)
             const dynamicProps = omit(props, [...methodNames, ...initPropNames]);
             const retFuncs = Object.fromEntries(methodNames.map((k) => [k, comp[k]]));
             function getConfigOptions() {
