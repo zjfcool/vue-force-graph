@@ -7,6 +7,7 @@ import commonjs from '@rollup/plugin-commonjs'
 import { rollup, OutputOptions } from 'rollup'
 import ts from 'rollup-plugin-typescript2'
 import vue from 'rollup-plugin-vue'
+import css from 'rollup-plugin-css-only'
 import { buildConfig } from './utils/config'
 import { pathRewriter, run } from './utils'
 import { Project, SourceFile, OutputFile } from 'ts-morph'
@@ -23,7 +24,7 @@ async function buildEachComponent() {
         const input = path.resolve(componentRoot, file, 'index.ts');
         const config = {
             input,
-            plugins: [nodeResolve(), vue(), ts(), commonjs()],
+            plugins: [nodeResolve(), vue(), ts(), css({ output: 'index.css' }), commonjs()],
             external: (id) => {
                 return /^vue/.test(id) || /^@vue-force-graph/.test(id) || Object.keys(dependencies).some(str => new RegExp(`^${str}$`).test(id))
             },

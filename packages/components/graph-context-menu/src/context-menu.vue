@@ -8,9 +8,13 @@
       height: height,
       backgroundColor: backgroundColor,
     }"
-    @click.stop
+    @click.stop="hide"
   >
-    <slot :graphContext="graphContext" :data="activeData" :event="event" />
+    <slot
+      :graphContext="graphContext"
+      :activeData="activeData"
+      :event="event"
+    />
   </div>
 </template>
 <script lang="ts">
@@ -34,7 +38,7 @@ import {
 import { contextMenuProps } from "./context-menu.ts";
 
 export default defineComponent({
-  name: "ContextMenu",
+  name: "GraphContextMenu",
   props: contextMenuProps,
   setup(props) {
     const menuContainerRef = ref();
@@ -42,6 +46,9 @@ export default defineComponent({
       visible: false,
       xyz: [0, 0, 0],
     });
+    const hide = () => {
+      state.visible = false;
+    };
     const menuData = reactive({
       graphContext: null,
       activeData: null,
@@ -53,11 +60,8 @@ export default defineComponent({
     const show = () => {
       state.visible = true;
     };
-    const hide = () => {
-      state.visible = false;
-    };
+
     let reqID;
-    console.log("helleo");
     const resetContainerPosition = () => {
       let x = 0,
         y = 0;
@@ -67,7 +71,6 @@ export default defineComponent({
         x = g.x;
         y = g.y;
       }
-      console.log("heleleeee");
       if (state.visible) {
         setContainerPosition(x, y);
       } else {
@@ -119,7 +122,29 @@ export default defineComponent({
     };
     const onLinkRightClickHandle = () => {
       graphContext.onLinkRightClick((node, evt) => {
-        console.log("onLinkRightClick", node, evt);
+        menuData.event = evt;
+        menuData.activeData = node;
+        const { clientX, clientY } = evt;
+        const { x: tx, y: ty } = graphContext.graph2ScreenCoords(
+          node.target.x,
+          node.target.y,
+          node.target.z
+        );
+        const { x: sx, y: sy } = graphContext.graph2ScreenCoords(
+          node.source.x,
+          node.source.y,
+          node.source.z
+        );
+        const percentx = (clientX - tx) / (sx - tx);
+        const percenty = (clientY - ty) / (sy - ty);
+        state.xyz = [
+          percentx * (node.source.x - node.target.x) + node.target.x,
+          percenty * (node.source.y - node.target.y) + node.target.y,
+          ((percentx + percenty) / 2) * (+node.source.z - node.target.z) +
+            node.target.z,
+        ];
+        setContainerPosition(clientX, clientY);
+        show();
       });
     };
 
@@ -143,6 +168,7 @@ export default defineComponent({
       menuContainerRef,
       ...toRefs(state),
       ...toRefs(menuData),
+      hide,
     };
   },
 });

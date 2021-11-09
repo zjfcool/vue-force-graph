@@ -1,11 +1,20 @@
-import { VueForceGraph2D, VueForceGraph3D, VueForceGraphVR, VueForceGraphAR } from '@vue-force-graph/components'
+import {
+    VueForceGraph2D,
+    VueForceGraph3D,
+    VueForceGraphVR,
+    VueForceGraphAR,
+    GraphContextMenu,
+    GraphMenu
+} from '@vue-force-graph/components'
 import type { App } from 'vue'
 
 const components = [
     VueForceGraph3D,
     VueForceGraph2D,
     VueForceGraphVR,
-    VueForceGraphAR
+    VueForceGraphAR,
+    GraphContextMenu,
+    GraphMenu
 ]
 const install = (app: App) => {
     components.forEach(component => {

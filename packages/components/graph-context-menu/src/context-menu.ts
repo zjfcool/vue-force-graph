@@ -17,7 +17,7 @@ export const contextMenuProps = {
     },
     width: {
         type: [Number, String],
-        default: 100
+        default: 'auto'
     },
     height: {
         type: [Number, String],

@@ -15,3 +15,7 @@ export const withInstall = <T, E extends Record<string, any>>(main: T, extra?: E
     }
     return main as SFCWithInstall<T> & E;
 }
+export const withNoopInstall = <T>(component: T) => {
+    ; (component as SFCWithInstall<T>).install = () => { }
+    return component as SFCWithInstall<T>
+}

@@ -19,6 +19,10 @@
     "webgl",
     "canvas"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zjfcool/vue-force-graph.git"
+  },
   "dependencies": {
     "3d-force-graph-ar": "^1.7.1",
     "3d-force-graph-vr": "^2.0.7",
@@ -26,5 +30,5 @@
     "force-graph": "^1.42.4"
   },
   "author": "zjfcool",
-  "license": "ISC"
+  "license": "MIT"
 }

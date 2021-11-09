@@ -2,8 +2,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "pnpm -C examples dev",
-    "build": "gulp -f build/gulpfile.ts"
+    "dev": "pnpm -C play dev",
+    "build": "gulp -f build/gulpfile.ts",
+    "pub": "cd dist && npm publish"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +20,7 @@
     "gulp": "^4.0.2",
     "gulp-typescript": "^6.0.0-alpha.1",
     "rollup": "^2.58.3",
+    "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-typescript2": "^0.30.0",
     "rollup-plugin-vue": "^6.0.0",
     "sucrase": "^3.20.3",
