@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.21/vue.global.min.js"
+        integrity="sha512-GsWDENXZe048JKJN8Pn1jb3+9/8caEQeP4W+Vz9Zd3+pfjoXLJgXT8nUc5rMI+5RAGyNVhdz1JuA7ZrICRnO/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./node_modules/vue-force-graph/index.js"></script>
+    <script type="module">
+        import { genRandomTree } from "./src/utils/index.ts"
+        const { createApp, h, defineComponent, reactive, toRefs } = window.Vue
+        const { VueForceGraph } = window
+        const state = reactive({
+            graphData: {
+                nodes:[],
+                links:[]
+            }
+        })
+        fetch('/block.json').then(res=>res.json()).then(data=>state.graphData=data)
+        const App = defineComponent({
+            template: `<VueForceGraph3D :graphData="graphData"></VueForceGraph3D>`,
+            setup() {
+                return {
+                    ...toRefs(state)
+                }
+            }
+        })
+        const app = createApp(App)
+        app.use(VueForceGraph.VueForceGraph3D)
+        app.mount('#app')
+    </script>
+</body>
+
+</html>

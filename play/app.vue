@@ -1,5 +1,17 @@
 <template>
-  <VueForceGraph3D :graphData="graphData">
+  <VueForceGraph3D
+    :graphData="graphData"
+    :nodeColor="getNodeColor"
+    nodeLabel="id"
+    :nodeOpacity="1"
+    :linkColor="getLinkColor"
+    :linkWidth="5"
+    :linkOpacity="0.2"
+    linkLabel="id"
+    :linkDirectionalArrowLength="3.5"
+    :linkDirectionalArrowRelPos="1"
+    :linkCurvature="0.25"
+  >
     <GraphContextMenu v-slot="data" bindType="canvas">
       <div style="background: red; color: green" @click="deleteItem(data)">
         删除
@@ -48,7 +60,7 @@ export default defineComponent({
   },
   setup() {
     const state = reactive({
-      graphData: genRandomTree(),
+      graphData: genRandomTree(40),
       menuData: [
         {
           id: "delete",
@@ -88,11 +100,19 @@ export default defineComponent({
     const actionHandle = (data) => {
       console.log(data);
     };
+    const getNodeColor = (node) => {
+      return "rgb(178, 255, 221)";
+    };
+    const getLinkColor = (link) => {
+      return "rgb(178, 255, 221)";
+    };
     return {
       ...toRefs(state),
       deleteItem,
       menuChange,
       actionHandle,
+      getNodeColor,
+      getLinkColor,
     };
   },
 });
