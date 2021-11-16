@@ -87,6 +87,10 @@ export const routes = [
         path: '/collision_detection',
         component: () => import('../views/collision-detection.vue')
     },
+    {
+        path: '/emit_particles',
+        component: () => import('../views/emit-particles.vue')
+    },
 ]
 export default createRouter({
     history: createWebHistory(),
