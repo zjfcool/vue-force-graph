@@ -1,5 +1,7 @@
 <template>
+  <div class="toggle-btn" @click="toggle">{{ is2D ? "3D" : "2D" }}</div>
   <VueForceGraph3D
+    v-if="!is2D"
     :graphData="graphData"
     :nodeColor="getNodeColor"
     nodeLabel="id"
@@ -24,7 +26,7 @@
       <GraphMenu :data="menuData" @change="menuChange">hello</GraphMenu>
     </GraphContextMenu>
   </VueForceGraph3D>
-  <!-- <VueForceGraph2D :graphData="graphData">
+  <VueForceGraph2D v-if="is2D" :graphData="graphData">
     <GraphContextMenu v-slot="data" bindType="canvas">
       <ul>
         <li @click="actionHandle(data)">hello</li>
@@ -36,7 +38,7 @@
     <GraphContextMenu v-slot="data" bindType="edge">
       <div @click="deleteItem(data)">sfsf</div>
     </GraphContextMenu>
-  </VueForceGraph2D> -->
+  </VueForceGraph2D>
 
   <!-- <VueForceGraphAR :graphData="graphData"></VueForceGraphAR> -->
   <!-- <VueForceGraphVR :graphData="graphData"></VueForceGraphVR> -->
@@ -55,12 +57,10 @@ function genRandomTree(N = 300, reverse = false) {
   };
 }
 export default defineComponent({
-  components: {
-    // VueForceGraph3D,
-  },
   setup() {
     const state = reactive({
       graphData: genRandomTree(40),
+      is2D: false,
       menuData: [
         {
           id: "delete",
@@ -106,6 +106,9 @@ export default defineComponent({
     const getLinkColor = (link) => {
       return "rgb(178, 255, 221)";
     };
+    const toggle = () => {
+      state.is2D = !state.is2D;
+    };
     return {
       ...toRefs(state),
       deleteItem,
@@ -113,6 +116,7 @@ export default defineComponent({
       actionHandle,
       getNodeColor,
       getLinkColor,
+      toggle,
     };
   },
 });
@@ -126,5 +130,21 @@ html {
   overflow: hidden;
   margin: 0;
   padding: 0;
+}
+.toggle-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #000;
+  box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.3),
+    -1px -1px 5px rgba(255, 255, 255, 0.3);
+  z-index: 9;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
 }
 </style>

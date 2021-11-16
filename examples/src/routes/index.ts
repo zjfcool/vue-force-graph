@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import TextLinks from '../views/text-links.vue'
+import TextNode3D from '../views/text-nodes-3d.vue'
+import ImgNodes from '../views/img-nodes.vue'
 export const routes = [
     {
         path: '/',
@@ -27,11 +29,11 @@ export const routes = [
     },
     {
         path: '/text_nodes_3d',
-        component: () => import('../views/text-nodes-3d.vue')
+        component: TextNode3D
     },
     {
         path: '/img_nodes',
-        component: () => import('../views/img-nodes.vue')
+        component: ImgNodes
     },
     {
         path: '/html_nodes',
@@ -47,7 +49,7 @@ export const routes = [
     // }
     {
         path: '/text_links',
-        component: () => TextLinks
+        component: TextLinks
     },
     {
         path: '/highlight_2d',
@@ -80,6 +82,10 @@ export const routes = [
     {
         path: '/camera_auto_orbit',
         component: () => import('../views/camera-auto-orbit.vue')
+    },
+    {
+        path: '/collision_detection',
+        component: () => import('../views/collision-detection.vue')
     },
 ]
 export default createRouter({

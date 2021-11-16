@@ -1,10 +1,11 @@
 import { series, parallel } from 'gulp'
 import { genTypes } from './gen-types'
 import { run, withTaskName } from './utils'
-import { outputDir, vueForceGraphRoot } from './utils/paths'
+import { outputDir, projectRoot, vueForceGraphRoot } from './utils/paths'
 
 async function copySourceCode() {
     await run(`cp ${vueForceGraphRoot}/package.json ${outputDir}/package.json`)
+    await run(`cp ${projectRoot}/README.md ${outputDir}/README.md`)
 }
 export default series(
     withTaskName('clean', async () => run('rm -rf ./dist')),

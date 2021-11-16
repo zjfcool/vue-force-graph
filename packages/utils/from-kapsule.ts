@@ -1,4 +1,4 @@
-import { defineComponent, ref, h, watchEffect, onMounted, DefineComponent } from 'vue'
+import { defineComponent, ref, h, watchEffect, onMounted, DefineComponent, onBeforeUnmount } from 'vue'
 import { useProvider, useGraphContext } from './hooks'
 function omit(target, args) {
     return Object.fromEntries(
@@ -52,10 +52,20 @@ export default function fromKapsule(kapsuleComponent: (options: any) => any, com
             });
             function init() {
                 comp(domEl.value);
+                resizeHandle()
+                window.addEventListener('resize', resizeHandle)
+            }
+            function resizeHandle() {
+                comp.height(window.innerHeight)
+                    .width(window.innerWidth)
             }
             onMounted(() => {
                 init();
             });
+            onBeforeUnmount(() => {
+                comp._destructor instanceof Function ? comp._destructor() : null;
+                window.removeEventListener('resize', resizeHandle)
+            })
             expose({
                 ...retFuncs,
                 graphContext: comp,

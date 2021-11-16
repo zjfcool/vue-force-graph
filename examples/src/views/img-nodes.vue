@@ -25,20 +25,19 @@ const graphData = ref({
       target: Math.round(Math.random() * (id - 1)),
     })),
 });
+const nodeThreeObject = ({ img }) => {
+  const imgTexture = new THREE.TextureLoader().load(`/images/${img}`);
+  const material = new THREE.SpriteMaterial({ map: imgTexture });
+  const sprite = new THREE.Sprite(material);
+  sprite.scale.set(12, 12);
+
+  return sprite;
+};
 </script>
 <template>
   <VueForceGraph3D
     :graphData="graphData"
     backgroundColor="#090723"
-    :nodeThreeObject="
-      ({ img }) => {
-        const imgTexture = new THREE.TextureLoader().load(`/images/${img}`);
-        const material = new THREE.SpriteMaterial({ map: imgTexture });
-        const sprite = new THREE.Sprite(material);
-        sprite.scale.set(12, 12);
-
-        return sprite;
-      }
-    "
+    :nodeThreeObject="nodeThreeObject"
   ></VueForceGraph3D>
 </template>

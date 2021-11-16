@@ -18,9 +18,18 @@ export default defineComponent({
     fetch("/miserables.json")
       .then((res) => res.json())
       .then((data) => (graphData.value = data));
+    const linkPositionUpdate = (sprite, { start, end }) => {
+      const xyz = ["x", "y", "z"].map((c) => ({
+        [c]: start[c] + (end[c] - start[c]) / 2, // calc middle point
+      })) as [{ x: number }, { y: number }, { z: number }];
+      const middlePos = Object.assign(...xyz);
+      // Position sprite
+      Object.assign(sprite.position, middlePos);
+    };
     return {
       graphData,
       linkThreeObject,
+      linkPositionUpdate,
     };
   },
 });
@@ -33,17 +42,6 @@ export default defineComponent({
     nodeAutoColorBy="group"
     :linkThreeObjectExtend="true"
     :linkThreeObject="linkThreeObject"
-    :linkPositionUpdate="
-      (sprite, { start, end }) => {
-        const middlePos = Object.assign(
-          ...['x', 'y', 'z'].map((c) => ({
-            [c]: start[c] + (end[c] - start[c]) / 2, // calc middle point
-          }))
-        );
-
-        // Position sprite
-        Object.assign(sprite.position, middlePos);
-      }
-    "
+    :linkPositionUpdate="linkPositionUpdate"
   ></VueForceGraph3D>
 </template>
