@@ -99,6 +99,10 @@ export const routes = [
         path: '/bloom_effect',
         component: () => import('../views/bloom-effect.vue')
     },
+    {
+        path: '/graph_context_menu',
+        component: () => import('../views/graph-context-menu.vue')
+    },
 ]
 export default createRouter({
     history: createWebHistory(),
