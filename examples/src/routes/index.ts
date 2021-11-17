@@ -91,6 +91,10 @@ export const routes = [
         path: '/emit_particles',
         component: () => import('../views/emit-particles.vue')
     },
+    {
+        path: '/tree',
+        component: () => import('../views/tree.vue')
+    },
 ]
 export default createRouter({
     history: createWebHistory(),
