@@ -95,6 +95,10 @@ export const routes = [
         path: '/tree',
         component: () => import('../views/tree.vue')
     },
+    {
+        path: '/bloom_effect',
+        component: () => import('../views/bloom-effect.vue')
+    },
 ]
 export default createRouter({
     history: createWebHistory(),
