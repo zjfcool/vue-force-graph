@@ -13,7 +13,7 @@ Supports zooming/panning, node dragging and node/link hover/click interactions.
 
 ## Examples
 
-[demo]()
+[demo](https://zjfcool.github.io/vue-force-graph/examples/dist/)
 
 ## Quick start
 

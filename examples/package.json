@@ -11,7 +11,7 @@
     "d3-quadtree": "^3.0.1",
     "three-spritetext": "^1.6.3",
     "vue": "^3.2.16",
-    "vue-force-graph": "^0.1.0",
+    "vue-force-graph": "^0.1.1",
     "vue-router": "^4.0.12"
   },
   "devDependencies": {

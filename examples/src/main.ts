@@ -6,11 +6,6 @@ import App from './App.vue'
 import './index.css'
 
 const app = createApp(App)
-router.afterEach((to, from) => {
-    if (from.path !== '/') {
-        window.location.reload()
-    }
-})
 app.use(router)
     .use(VueForceGraph3D)
     .use(VueForceGraph2D)

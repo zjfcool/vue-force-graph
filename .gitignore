@@ -1,5 +1,6 @@
 node_modules
-dist/**
+dist
 **/es/**
 **/lib/**
 .pnpm-debug.log*
+!examples/dist
