@@ -116,9 +116,4 @@ function toggle() {
   animation: slide-fade-in 1s ease-in;
   transition: all 0.25s linear;
 }
-.toggle-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 1px 4px 5px rgba(255, 255, 255, 0.5),
-    -1px -1px 5px rgba(255, 255, 255, 0.5);
-}
 </style>

@@ -3,7 +3,9 @@ vue-force-graph
 
 Vue bindings for the **force-graph**  of components: [force-graph](https://github.com/vasturiano/force-graph) (2D HTML Canvas), [3d-force-graph](https://github.com/vasturiano/3d-force-graph) (ThreeJS/WebGL), [3d-force-graph-vr](https://github.com/vasturiano/3d-force-graph-vr) (A-Frame) and [3d-force-graph-ar](https://github.com/vasturiano/3d-force-graph-ar) (AR.js).
 
-
+<p align="center">
+  <a href="http://123.57.34.184:8080"><img width="80%" src="https://github.com/zjfcool/vue-force-graph/tree/main/public/example.jpg"></a>
+</p>
 This module exports 5 Vue components with identical interfaces: `VueForceGraph2D`, `VueForceGraph3D`, `VueForceGraphVR` , `VueForceGraphAR` and `GraphContextMenu`. Each can be used to represent a graph data structure in a 2 or 3-dimensional space using a force-directed iterative layout.
 
 For dependency convenience, all of the components are also available as stand-alone packages: `vue-force-graph-2d`, `vue-force-graph-3d`, `vue-force-graph-vr` and `vue-force-graph-ar`.
@@ -13,7 +15,12 @@ Supports zooming/panning, node dragging and node/link hover/click interactions.
 
 ## Examples
 
-[demo](https://zjfcool.github.io/vue-force-graph/examples/dist/)
+[demo](http://123.57.34.184:8080)
+
+## Install
+```shell
+npm install vue-force-graph
+```
 
 ## Quick start
 
@@ -194,6 +201,16 @@ Note that not all props listed below apply to all 4 components. The last 4 colum
 | <b>screen2GraphCoords</b> | (<i>x</i>, <i>y</i>[, <i>distance</i>]) | Utility method to translate viewport coordinates to the graph domain. Given a pair of `x`,`y` screen coordinates, and optionally distance from camera for 3D mode, returns the current equivalent `{x, y (, z)}` in the domain of graph node coordinates. | :heavy_check_mark: | :heavy_check_mark: | | |
 | <b>graph2ScreenCoords</b> | (<i>x</i>, <i>y</i>[, <i>z</i>]) | Utility method to translate node coordinates to the viewport domain. Given a set of `x`,`y`(,`z`) graph coordinates, returns the current equivalent `{x, y}` in viewport coordinates. | :heavy_check_mark: | :heavy_check_mark: | | |
 
+### GraphContextMenu Props
+| Props  | Type   | Default |Description|
+|---|:--:|---|:--:|---|:--:|
+| bindType |`"canvas"|"node"|"edge"`||
+| v-slot |object||`{graphContext,activeData,event}`|
+### GraphMenu Props
+| Props  | Type   | Default |Description|
+|---|:--:|---|:--:|---|:--:|
+|change|event||vue event props,arguments is `{activeData,event,graphContext,menuItem,}`|
+|data|`{id:string|number;label:string}[]`| |render list data|
 ### Input JSON syntax
 
 ```
@@ -223,4 +240,4 @@ Note that not all props listed below apply to all 4 components. The last 4 colum
 
 ## Thanks
 
-
+[vasturiano](https://github.com/vasturiano)
