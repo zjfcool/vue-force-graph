@@ -37,7 +37,8 @@
     </svg>
   </div>
   <VueForceGraph3D
-    v-show="is3D"
+    ref="fg3DRef"
+    v-if="is3D"
     :graphData="graphData"
     :nodeColor="getNodeColor"
     :linkWidth="3"
@@ -46,6 +47,7 @@
     backgroundColor="#090723"
   ></VueForceGraph3D>
   <VueForceGraph2D
+    ref="fg2DRef"
     v-if="is2D"
     :graphData="graphData"
     backgroundColor="#090723"
@@ -53,15 +55,54 @@
   ></VueForceGraph2D>
 </template>
 <script lang="ts">
-import { defineComponent, reactive, toRefs, computed } from "vue";
+import {
+  defineComponent,
+  reactive,
+  toRefs,
+  computed,
+  ref,
+  watch,
+  onBeforeUnmount,
+} from "vue";
 import { genRandomTree } from "../utils";
 import * as THREE from "three";
+import * as dat from "dat.gui";
 
 export default defineComponent({
   setup() {
     const state = reactive({
       type: "3d",
       graphData: genRandomTree(),
+    });
+    const guiCtx = ref();
+    const fg3DRef = ref();
+    const fg2DRef = ref();
+    const GUIProps = reactive({
+      GUIWidth: 246,
+    });
+    const threeGUIFields = reactive({
+      nodeColor: "rgba(83, 168, 255, 1)",
+      linkColor: "rgba(255,255,255,0.2)",
+      linkOpacity: 0.2,
+      backgroundColor: "#090723",
+      showNavInfo: true,
+      nodeRelSize: 4,
+      nodeVisibility: true,
+      nodeOpacity: 0.75,
+      nodeResolution: 24,
+      linkVisibility: true,
+      linkWidth: 3,
+      linkResolution: 6,
+      linkCurvature: 0.0,
+      linkDirectionalArrowLength: 0,
+      linkDirectionalArrowRelPos: 0,
+      linkDirectionalArrowResolution: 8,
+      linkDirectionalArrowColor: "rgba(255,255,255,.2)",
+      linkDirectionalParticles: 0,
+      linkDirectionalParticleSpeed: 0.01,
+      linkDirectionalParticleWidth: 0.5,
+      linkDirectionalParticleColor: "#ffffff",
+      linkDirectionalParticleResolution: 4,
     });
     const is3D = computed(() => state.type === "3d");
     const is2D = computed(() => state.type === "2d");
@@ -109,6 +150,111 @@ export default defineComponent({
       mesh.rotation.y = Math.PI / 2;
       return mesh;
     };
+    watch(
+      () => [threeGUIFields, is3D.value],
+      () => {
+        const gc = is3D.value
+          ? fg3DRef.value?.graphContext
+          : fg2DRef.value?.graphContext;
+        gc?.nodeColor(() => threeGUIFields.nodeColor);
+        if (is3D.value) gc?.nodeOpacity(threeGUIFields.nodeOpacity);
+        gc?.linkColor(() => threeGUIFields.linkColor);
+        if (is3D.value) gc?.linkOpacity(threeGUIFields.linkOpacity);
+        gc?.backgroundColor(threeGUIFields.backgroundColor);
+        if (is3D.value) gc?.showNavInfo(threeGUIFields.showNavInfo);
+        gc?.nodeRelSize(threeGUIFields.nodeRelSize);
+        gc?.nodeVisibility(threeGUIFields.nodeVisibility);
+        if (is3D.value) gc?.nodeOpacity(threeGUIFields.nodeOpacity);
+        if (is3D.value) gc?.nodeResolution(threeGUIFields.nodeResolution);
+        gc?.linkVisibility(threeGUIFields.linkVisibility);
+        gc?.linkWidth(threeGUIFields.linkWidth);
+        if (is3D.value) gc?.linkResolution(threeGUIFields.linkResolution);
+        gc?.linkCurvature(threeGUIFields.linkCurvature);
+        gc?.linkDirectionalArrowLength(
+          threeGUIFields.linkDirectionalArrowLength
+        );
+        gc?.linkDirectionalArrowRelPos(
+          threeGUIFields.linkDirectionalArrowRelPos
+        );
+        if (is3D.value)
+          gc?.linkDirectionalArrowResolution(
+            threeGUIFields.linkDirectionalArrowResolution
+          );
+        gc?.linkDirectionalArrowColor(
+          () => threeGUIFields.linkDirectionalArrowColor
+        );
+        gc?.linkDirectionalParticles(threeGUIFields.linkDirectionalParticles);
+        gc?.linkDirectionalParticleSpeed(
+          threeGUIFields.linkDirectionalParticleSpeed
+        );
+        gc?.linkDirectionalParticleWidth(
+          threeGUIFields.linkDirectionalParticleWidth
+        );
+        gc?.linkDirectionalParticleColor(
+          () => threeGUIFields.linkDirectionalParticleColor
+        );
+        if (is3D.value)
+          gc?.linkDirectionalParticleResolution(
+            threeGUIFields.linkDirectionalParticleResolution
+          );
+      },
+      {
+        deep: true,
+      }
+    );
+    function createGUI() {
+      const gui = new dat.GUI();
+      guiCtx.value = gui;
+      gui.width = GUIProps.GUIWidth;
+      const dom = gui.domElement;
+      dom.style.float = "left";
+      dom.style.marginLeft = "24px";
+      dom.style.marginTop = "24px";
+      gui.add(GUIProps, "GUIWidth", 246, 500);
+      gui.addColor(threeGUIFields, "nodeColor");
+      gui.add(threeGUIFields, "nodeVisibility");
+      if (is3D.value) gui.add(threeGUIFields, "nodeOpacity", 0, 1);
+      gui.add(threeGUIFields, "nodeRelSize", 1, 20);
+      if (is3D.value) gui.add(threeGUIFields, "nodeResolution", 1, 30);
+
+      gui.addColor(threeGUIFields, "linkColor");
+      gui.add(threeGUIFields, "linkOpacity", 0, 1);
+      gui.add(threeGUIFields, "linkVisibility");
+      gui.add(threeGUIFields, "linkWidth", 1, 20);
+      if (is3D.value) gui.add(threeGUIFields, "linkResolution", 1, 28);
+      gui.add(threeGUIFields, "linkCurvature", 0, 0.5);
+      gui.add(threeGUIFields, "linkDirectionalArrowLength", 0, 10);
+      gui.add(threeGUIFields, "linkDirectionalArrowRelPos", 0, 1);
+      if (is3D.value)
+        gui.add(threeGUIFields, "linkDirectionalArrowResolution", 1, 24);
+      gui.addColor(threeGUIFields, "linkDirectionalArrowColor");
+      gui.add(threeGUIFields, "linkDirectionalParticleSpeed", 0, 0.5);
+      gui.add(threeGUIFields, "linkDirectionalParticles", 0, 10);
+      gui.add(threeGUIFields, "linkDirectionalParticleWidth", 0.5, 10);
+      gui.addColor(threeGUIFields, "linkDirectionalParticleColor");
+      if (is3D.value)
+        gui.add(threeGUIFields, "linkDirectionalParticleResolution", 0, 24);
+
+      if (is3D.value) gui.add(threeGUIFields, "showNavInfo");
+      gui.addColor(threeGUIFields, "backgroundColor");
+    }
+    watch(
+      () => is3D.value,
+      () => {
+        if (guiCtx.value) guiCtx.value.destroy();
+        createGUI();
+      },
+      { immediate: true }
+    );
+    watch(
+      () => GUIProps.GUIWidth,
+      () => {
+        if (guiCtx.value) guiCtx.value.width = GUIProps.GUIWidth;
+      }
+    );
+    onBeforeUnmount(() => {
+      guiCtx.value.destroy();
+    });
     return {
       ...toRefs(state),
       is3D,
@@ -116,6 +262,8 @@ export default defineComponent({
       toggle,
       getLinkColor,
       getNodeColor,
+      fg3DRef,
+      fg2DRef,
       //   createHeartMesh,
     };
   },
