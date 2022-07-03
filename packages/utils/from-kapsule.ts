@@ -56,8 +56,8 @@ export default function fromKapsule(kapsuleComponent: (options: any) => any, com
                 window.addEventListener('resize', resizeHandle)
             }
             function resizeHandle() {
-                comp.height(window.innerHeight)
-                    .width(window.innerWidth)
+                comp.height(props.height || window.innerHeight)
+                    .width(props.width || window.innerWidth)
             }
             onMounted(() => {
                 init();
