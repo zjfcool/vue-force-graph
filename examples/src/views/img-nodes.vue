@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import * as THREE from "three";
+import { isProd } from "../../config/base.config";
 const imgs = [
   "cat.jpg",
   "dog.jpg",
@@ -26,7 +27,9 @@ const graphData = ref({
     })),
 });
 const nodeThreeObject = ({ img }) => {
-  const imgTexture = new THREE.TextureLoader().load(`/images/${img}`);
+  const imgTexture = new THREE.TextureLoader().load(
+    isProd ? `/vue-force-graph/images/${img}` : `/images/${img}`
+  );
   const material = new THREE.SpriteMaterial({ map: imgTexture });
   const sprite = new THREE.Sprite(material);
   sprite.scale.set(12, 12);
