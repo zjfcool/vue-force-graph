@@ -1,1 +1,0 @@
-import{g as a}from"./index.92534d36.js";import{d as r,r as n,a as t,c as s,o as c}from"./vendor.b8487768.js";const _=r({setup(p){const e=n(a());return(m,u)=>{const o=t("VueForceGraph3D");return c(),s(o,{graphData:e.value,backgroundColor:"#090723"},null,8,["graphData"])}}});export{_ as default};

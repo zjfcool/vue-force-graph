@@ -77,9 +77,6 @@ export default defineComponent({
     const guiCtx = ref();
     const fg3DRef = ref();
     const fg2DRef = ref();
-    const GUIProps = reactive({
-      GUIWidth: 246,
-    });
     const threeGUIFields = reactive({
       nodeColor: "rgba(83, 168, 255, 1)",
       linkColor: "rgba(255,255,255,0.2)",
@@ -205,12 +202,7 @@ export default defineComponent({
     function createGUI() {
       const gui = new dat.GUI();
       guiCtx.value = gui;
-      gui.width = GUIProps.GUIWidth;
       const dom = gui.domElement;
-      dom.style.float = "left";
-      dom.style.marginLeft = "24px";
-      dom.style.marginTop = "24px";
-      gui.add(GUIProps, "GUIWidth", 246, 500);
       gui.addColor(threeGUIFields, "nodeColor");
       gui.add(threeGUIFields, "nodeVisibility");
       if (is3D.value) gui.add(threeGUIFields, "nodeOpacity", 0, 1);
@@ -245,12 +237,6 @@ export default defineComponent({
         createGUI();
       },
       { immediate: true }
-    );
-    watch(
-      () => GUIProps.GUIWidth,
-      () => {
-        if (guiCtx.value) guiCtx.value.width = GUIProps.GUIWidth;
-      }
     );
     onBeforeUnmount(() => {
       guiCtx.value.destroy();

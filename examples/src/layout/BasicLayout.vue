@@ -76,7 +76,7 @@ export default defineComponent({
 .navs-container {
   position: absolute;
   top: 24px;
-  right: 24px;
+  left: 24px;
   box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.2),
     -1px -1px 5px rgba(255, 255, 255, 0.2);
   border-radius: 12px;
