@@ -1,4 +1,4 @@
-import{C as p,u as n,P as C,W as g,U as x,S as f,V as m,x as T,A as U,y as w,z as y,d as B,a as b,n as D,g as P,i as F,j as z}from"./index.ca7d2478.js";const M={shaderID:"luminosityHighPass",uniforms:{tDiffuse:{value:null},luminosityThreshold:{value:1},smoothWidth:{value:1},defaultColor:{value:new p(0)},defaultOpacity:{value:0}},vertexShader:`
+import{C as p,u as n,P as C,W as g,U as x,S as f,V as m,x as T,A as U,y as w,z as y,d as B,a as b,D,n as P,g as F,i as z,j as _}from"./index.9a57ca92.js";const M={shaderID:"luminosityHighPass",uniforms:{tDiffuse:{value:null},luminosityThreshold:{value:1},smoothWidth:{value:1},defaultColor:{value:new p(0)},defaultOpacity:{value:0}},vertexShader:`
 
 		varying vec2 vUv;
 
@@ -86,4 +86,4 @@ import{C as p,u as n,P as C,W as g,U as x,S as f,V as m,x as T,A as U,y as w,z a
 						lerpBloomFactor(bloomFactors[2]) * vec4(bloomTintColors[2], 1.0) * texture2D(blurTexture3, vUv) +
 						lerpBloomFactor(bloomFactors[3]) * vec4(bloomTintColors[3], 1.0) * texture2D(blurTexture4, vUv) +
 						lerpBloomFactor(bloomFactors[4]) * vec4(bloomTintColors[4], 1.0) * texture2D(blurTexture5, vUv) );
-				}`})}}h.BlurDirectionX=new n(1,0);h.BlurDirectionY=new n(0,1);const V=B({__name:"bloom-effect",setup(_){const e=b(),s=b({nodes:[],links:[]});return fetch("/miserables.json").then(t=>t.json()).then(t=>s.value=t),D(()=>{const t=new h;t.strength=3,t.radius=1,t.threshold=.1,e.value.postProcessingComposer().addPass(t)}),(t,a)=>{const r=F("VueForceGraph3D");return z(),P(r,{ref_key:"fgRef",ref:e,graphData:s.value,backgroundColor:"#090723",nodeLabel:"id",nodeAutoColorBy:"group"},null,8,["graphData"])}}});export{V as default};
+				}`})}}h.BlurDirectionX=new n(1,0);h.BlurDirectionY=new n(0,1);const H=B({__name:"bloom-effect",setup(R){const e=b(),s=b({nodes:[],links:[]});return fetch(D).then(t=>t.json()).then(t=>s.value=t),P(()=>{const t=new h;t.strength=3,t.radius=1,t.threshold=.1,e.value.postProcessingComposer().addPass(t)}),(t,a)=>{const r=z("VueForceGraph3D");return _(),F(r,{ref_key:"fgRef",ref:e,graphData:s.value,backgroundColor:"#090723",nodeLabel:"id",nodeAutoColorBy:"group"},null,8,["graphData"])}}});export{H as default};

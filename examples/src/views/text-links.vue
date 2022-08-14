@@ -1,6 +1,7 @@
 <script lang="ts">
 import { ref, defineComponent } from "vue";
 import SpriteText from "three-spritetext";
+import { DATA_URL } from "../../config/base.config";
 
 export default defineComponent({
   setup() {
@@ -15,7 +16,7 @@ export default defineComponent({
       sprite.textHeight = 1.5;
       return sprite;
     }
-    fetch("/miserables.json")
+    fetch(DATA_URL)
       .then((res) => res.json())
       .then((data) => (graphData.value = data));
     const linkPositionUpdate = (sprite, { start, end }) => {

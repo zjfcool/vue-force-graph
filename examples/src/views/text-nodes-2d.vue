@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import { DATA_URL } from "../../config/base.config";
 const graphData = ref({
   nodes: [],
   links: [],
 });
-fetch("/miserables.json")
+fetch(DATA_URL)
   .then((res) => res.json())
   .then((data) => (graphData.value = data));
 </script>

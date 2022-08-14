@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import SpriteText from "three-spritetext";
+import { DATA_URL } from "../../config/base.config";
 const graphData = ref({
   nodes: [],
   links: [],
@@ -11,7 +12,7 @@ function spriteText(node) {
   sprite.textHeight = 8;
   return sprite;
 }
-fetch("/miserables.json")
+fetch(DATA_URL)
   .then((res) => res.json())
   .then((data) => (graphData.value = data));
 </script>

@@ -1,5 +1,6 @@
 <script lang="ts">
 import { ref, defineComponent } from "vue";
+import { DATA_URL } from "../../config/base.config";
 import { genRandomTree } from "../utils";
 export default defineComponent({
   setup() {
@@ -7,7 +8,7 @@ export default defineComponent({
       nodes: [],
       links: [],
     });
-    fetch("/miserables.json")
+    fetch(DATA_URL)
       .then((res) => res.json())
       .then((data) => (graphData.value = data));
     return {

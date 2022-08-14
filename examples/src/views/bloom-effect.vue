@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass";
+import { DATA_URL } from "../../config/base.config";
 const fgRef = ref();
 const graphData = ref({
   nodes: [],
   links: [],
 });
-fetch("/miserables.json")
+fetch(DATA_URL)
   .then((res) => res.json())
   .then((data) => (graphData.value = data));
 onMounted(() => {

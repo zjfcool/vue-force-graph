@@ -105,6 +105,10 @@ export const routes = [
   },
 ];
 export default createRouter({
-  history: createWebHistory("/vue-force-graph/"),
+  history: createWebHistory(
+    (import.meta as any).env.VITE_MODE === "production"
+      ? "/vue-force-graph/"
+      : "/"
+  ),
   routes,
 });

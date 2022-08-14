@@ -4,12 +4,13 @@ import {
   CSS2DRenderer,
   CSS2DObject,
 } from "three/examples/jsm/renderers/CSS2DRenderer.js";
+import { DATA_URL } from "../../config/base.config";
 const extraRenderers = [new CSS2DRenderer()];
 const graphData = ref({
   nodes: [],
   links: [],
 });
-fetch("/miserables.json")
+fetch(DATA_URL)
   .then((res) => res.json())
   .then((data) => (graphData.value = data));
 function nodeThreeObject(node) {

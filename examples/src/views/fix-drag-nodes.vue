@@ -1,12 +1,13 @@
 <script lang="ts">
 import { ref, defineComponent } from "vue";
+import { DATA_URL } from "../../config/base.config";
 export default defineComponent({
   setup() {
     const graphData = ref({
       nodes: [],
       links: [],
     });
-    fetch("/miserables.json")
+    fetch(DATA_URL)
       .then((res) => res.json())
       .then((data) => (graphData.value = data));
     return {

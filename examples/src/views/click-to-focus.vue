@@ -1,5 +1,6 @@
 <script lang="ts">
 import { ref, onMounted, defineComponent } from "vue";
+import { DATA_URL } from "../../config/base.config";
 export default defineComponent({
   setup() {
     const graphData = ref({
@@ -8,7 +9,7 @@ export default defineComponent({
     });
     const fgRef = ref();
     onMounted(() => {
-      fetch("/miserables.json")
+      fetch(DATA_URL)
         .then((res) => res.json())
         .then((data) => (graphData.value = data));
     });
