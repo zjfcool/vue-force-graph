@@ -3,6 +3,7 @@ import { onBeforeUpdate } from "vue";
 import { onUpdated } from "vue";
 import { onMounted } from "vue";
 import { ref } from "vue";
+import { BLOCK_DATA_URL } from "../../config/base.config";
 const graphData = ref({
   nodes: [],
   links: [],
@@ -29,7 +30,7 @@ onUpdated(() => {
 });
 onMounted(() => {
   console.log("mouted");
-  fetch("/block.json")
+  fetch(BLOCK_DATA_URL)
     .then((res) => res.json())
     .then((data) => (graphData.value = formatData(data)));
 });

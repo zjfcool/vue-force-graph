@@ -3,6 +3,7 @@ import { ref, onMounted, onBeforeUnmount } from "vue";
 import * as dat from "dat.gui";
 import { csvParse } from "d3-dsv";
 import { forceCollide } from "d3-force";
+import { DEPENDENCIES_DATA_URL } from "../../config/base.config";
 const fgRef = ref();
 const controls = ref({
   "DAG Orientation": "td",
@@ -24,10 +25,6 @@ function addDatGUI() {
     "radialin",
     null,
   ]);
-  const dom = gui.domElement;
-  dom.style.float = "left";
-  dom.style.marginLeft = "24px";
-  dom.style.marginTop = "24px";
 }
 function addCollisionForce() {
   fgRef.value.d3Force(
@@ -36,7 +33,7 @@ function addCollisionForce() {
   );
 }
 function initData() {
-  fetch("/d3-dependencies.csv")
+  fetch(DEPENDENCIES_DATA_URL)
     .then((res) => res.text())
     .then(csvParse)
     .then((data: any) => {

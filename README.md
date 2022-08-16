@@ -14,7 +14,7 @@ Supports zooming/panning, node dragging and node/link hover/click interactions.
 
 ## Examples
 
-[demo](http://123.57.34.184:8080)
+[demo](http://123.57.34.184)
 
 ## Install
 ```shell
