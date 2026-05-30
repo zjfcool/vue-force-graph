@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "Vue.volar",
+    "oxc.oxlint",
+    "oxc.oxc-vscode",
+    "streetsidesoftware.code-spell-checker"
+  ],
+  "unwantedRecommendations": ["octref.vetur"]
+}

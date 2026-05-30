@@ -1,0 +1,9 @@
+{
+  "tasks": {
+    "build": {},
+    "dev": {
+      "cache": false,
+      "persistent": true
+    }
+  }
+}

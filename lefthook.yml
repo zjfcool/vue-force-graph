@@ -1,0 +1,12 @@
+pre-commit:
+  parallel: true
+  jobs:
+    - name: oxfmt
+      run: "pnpm lint:fmt {staged_files}"
+      glob: "*.{ts,tsx,vue}"
+    - name: oxlint
+      run: "pnpm lint {staged_files}"
+      glob: "*.{ts,tsx,vue}"
+    - name: cspell
+      run: "pnpm lint:cspell {staged_files}"
+      glob: "*.{ts,tsx,vue}"

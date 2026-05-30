@@ -1,12 +1,27 @@
 {
-  "name": "@vue-force-graph/utils",
+  "name": "utils",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build": "gulp"
-  },
+  "private": true,
   "keywords": [],
+  "license": "MIT",
   "author": "",
-  "license": "ISC"
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch"
+  },
+  "devDependencies": {}
 }

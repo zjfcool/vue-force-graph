@@ -1,0 +1,17 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["eslint", "typescript", "unicorn", "oxc", "import"],
+  "categories": {
+    "correctness": "error"
+  },
+  "rules": {
+    "no-var": "error",
+    "no-unused-vars": "error",
+    "no-console": "warn",
+    "import/no-cycle": ["error", { "maxDepth": 3 }]
+  },
+  "ignorePatterns": ["dist/**", "node_modules/**", ".lefthook/**"],
+  "env": {
+    "builtin": true
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "version": "0.2",
+  "language": "en",
+  "import": ["@cspell/dict-lorem-ipsum/cspell-ext.json"],
+  "words": [],
+  "allowCompoundWords": true,
+  "ignorePaths": [
+    "node_modules",
+    "dist",
+    ".gitignore",
+    "*.yml",
+    ".lefthook",
+    ".changeset",
+    "pnpm-lock.yaml",
+    "public"
+  ],
+  "dictionaries": ["custom-words"],
+  "dictionaryDefinitions": [
+    {
+      "name": "custom-words",
+      "path": "./.cspell/custom-words.txt",
+      "addWords": true
+    }
+  ]
+}

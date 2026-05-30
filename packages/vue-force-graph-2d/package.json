@@ -1,0 +1,55 @@
+{
+  "name": "vue-force-graph-2d",
+  "version": "1.1.0",
+  "description": "A Vue component for rendering 2D force‑directed graphs, powered by the force-graph library.",
+  "keywords": [
+    "2d",
+    "canvas",
+    "d3",
+    "force",
+    "graph",
+    "simulation",
+    "vue"
+  ],
+  "homepage": "https://github.com/zjfcool/vue-force-graph",
+  "license": "MIT",
+  "author": {
+    "name": "zjfcool",
+    "url": "https://github.com/zjfcool"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zjfcool/vue-force-graph.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "prepublishOnly": "pnpm build"
+  },
+  "dependencies": {
+    "force-graph": "^1.51.4"
+  },
+  "devDependencies": {
+    "utils": "workspace:*"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.34"
+  }
+}
