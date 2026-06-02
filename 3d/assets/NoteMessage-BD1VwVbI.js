@@ -1,0 +1,1 @@
+import{F as e,K as t,L as n,P as r,W as i,t as a}from"./index-rWX56GiK.js";var o={},s={class:`note-message`};function c(a,o){return i(),n(r,null,[e(`div`,s,[t(a.$slots,`note`,{},void 0,!0)]),t(a.$slots,`default`,{},void 0,!0)],64)}var l=a(o,[[`render`,c],[`__scopeId`,`data-v-6841effa`]]);export{l as t};
