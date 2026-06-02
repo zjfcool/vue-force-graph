@@ -3,12 +3,12 @@
 A Vue component for rendering 2D force‑directed graphs, powered by the [force-graph](https://github.com/vasturiano/force-graph) library.
 
 <p align="center">
-     <a href="https://zjfcool.github.io/vue-force-graph-2d/"><img width="80%" src="https://zjfcool.github.io/vue-force-graph-2d/preview.png"></a>
+     <a href="https://zjfcool.github.io/vue-force-graph/2d/"><img width="80%" src="https://zjfcool.github.io/vue-force-graph/2d/preview.png"></a>
 </p>
 
 ## Examples
 
-[Demos](https://zjfcool.github.io/vue-force-graph-2d/)([Source Codes](https://github.com/zjfcool/vue-force-graph/tree/main/examples/vue-force-graph-2d/src/views))
+[Demos](https://zjfcool.github.io/vue-force-graph/2d/)([Source Codes](https://github.com/zjfcool/vue-force-graph/tree/main/examples/vue-force-graph-2d/src/views))
 
 ## Quick start
 

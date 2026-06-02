@@ -158,6 +158,6 @@ export const routes = [
   },
 ];
 export default createRouter({
-  history: createWebHistory("/vue-force-graph-2d/"),
+  history: createWebHistory("/vue-force-graph/2d/"),
   routes,
 });

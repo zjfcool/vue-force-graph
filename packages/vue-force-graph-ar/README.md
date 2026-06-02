@@ -3,12 +3,12 @@
 A Vue component for rendering AR force directed graphs, powered by the [3d-force-graph-ar](https://github.com/vasturiano/3d-force-graph-ar) library.
 
 <p align="center">
-     <a href="https://zjfcool.github.io/vue-force-graph-ar/"><img width="80%" src="https://zjfcool.github.io/vue-force-graph-ar/preview.png"></a>
+     <a href="https://zjfcool.github.io/vue-force-graph/ar/"><img width="80%" src="https://zjfcool.github.io/vue-force-graph/ar/preview.png"></a>
 </p>
 
 ## Examples
 
-[Demos](https://zjfcool.github.io/vue-force-graph-ar/)([Source Codes](https://github.com/zjfcool/vue-force-graph/tree/main/examples/vue-force-graph-ar/src/views))
+[Demos](https://zjfcool.github.io/vue-force-graph/ar/)([Source Codes](https://github.com/zjfcool/vue-force-graph/tree/main/examples/vue-force-graph-ar/src/views))
 
 ## Quick start
 

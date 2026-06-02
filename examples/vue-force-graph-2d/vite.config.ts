@@ -4,7 +4,7 @@ import { resolve } from "path";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/vue-force-graph-2d/",
+  base: "/vue-force-graph/2d/",
   plugins: [vue()],
   resolve: {
     alias: {

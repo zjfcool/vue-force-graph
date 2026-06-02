@@ -20,11 +20,11 @@ A `vue-force-graph` meta‑package is also available if you require every mode, 
 
 ## ✨ Examples
 
-[vue-force-graph-demos](https://zjfcool.github.io/vue-force-graph/)([Source Codes](https://github.com/zjfcool/vue-force-graph/tree/main/examples/vue-force-graph/src/))
-[vue-force-graph-2d-demos](https://zjfcool.github.io/vue-force-graph-2d/)([Source Codes](https://github.com/zjfcool/vue-force-graph/tree/main/examples/vue-force-graph-2d/src/))
-[vue-force-graph-3d-demos](https://zjfcool.github.io/vue-force-graph-3d/)([Source Codes](https://github.com/zjfcool/vue-force-graph/tree/main/examples/vue-force-graph-3d/src/))
-[vue-force-graph-vr-demos](https://zjfcool.github.io/vue-force-graph-vr/)([Source Codes](https://github.com/zjfcool/vue-force-graph/tree/main/examples/vue-force-graph-vr/src/))
-[vue-force-graph-ar-demos](https://zjfcool.github.io/vue-force-graph-ar/)([Source Codes](https://github.com/zjfcool/vue-force-graph/tree/main/examples/vue-force-graph-ar/src/))
+- [vue-force-graph-demos](https://zjfcool.github.io/vue-force-graph/)([Source Codes](https://github.com/zjfcool/vue-force-graph/tree/main/examples/vue-force-graph/src/))
+- [vue-force-graph-2d-demos](https://zjfcool.github.io/vue-force-graph/2d/)([Source Codes](https://github.com/zjfcool/vue-force-graph/tree/main/examples/vue-force-graph-2d/src/))
+- [vue-force-graph-3d-demos](https://zjfcool.github.io/vue-force-graph/3d/)([Source Codes](https://github.com/zjfcool/vue-force-graph/tree/main/examples/vue-force-graph-3d/src/))
+- [vue-force-graph-vr-demos](https://zjfcool.github.io/vue-force-graph/vr/)([Source Codes](https://github.com/zjfcool/vue-force-graph/tree/main/examples/vue-force-graph-vr/src/))
+- [vue-force-graph-ar-demos](https://zjfcool.github.io/vue-force-graph/ar/)([Source Codes](https://github.com/zjfcool/vue-force-graph/tree/main/examples/vue-force-graph-ar/src/))
 
 ## 📦 Installation
 

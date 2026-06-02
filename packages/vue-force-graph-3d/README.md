@@ -3,12 +3,12 @@
 A Vue component for rendering 3D force-directed graph, powered by the [3d-force-graph](https://github.com/vasturiano/3d-force-graph) library.
 
 <p align="center">
-     <a href="https://zjfcool.github.io/vue-force-graph-3d/"><img width="80%" src="https://zjfcool.github.io/vue-force-graph-3d/preview.png"></a>
+     <a href="https://zjfcool.github.io/vue-force-graph/3d/"><img width="80%" src="https://zjfcool.github.io/vue-force-graph/3d/preview.png"></a>
 </p>
 
 ## Examples
 
-[Demos](https://zjfcool.github.io/vue-force-graph-3d/)([Source Codes](https://github.com/zjfcool/vue-force-graph/tree/main/examples/vue-force-graph-3d/src/views))
+[Demos](https://zjfcool.github.io/vue-force-graph/3d/)([Source Codes](https://github.com/zjfcool/vue-force-graph/tree/main/examples/vue-force-graph-3d/src/views))
 
 ## Quick start
 
