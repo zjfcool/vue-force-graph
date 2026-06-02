@@ -41,7 +41,7 @@ const linkPositionUpdateHandle = (sprite: any, { start, end }: any) => {
 };
 
 onMounted(async () => {
-  const response = await fetch("/vue-force-graph-3d/miserables.json");
+  const response = await fetch("/vue-force-graph/3d/miserables.json");
   const data = await response.json();
   graphData.value = data;
 

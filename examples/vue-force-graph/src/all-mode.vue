@@ -30,7 +30,7 @@ const graphList = [
     linkColor: linkColorHandle,
     nodeAutoColorBy: "id",
     is: ForceGraph2D,
-    href: "https://zjfcool.github.io/vue-force-graph-2d/",
+    href: "https://zjfcool.github.io/vue-force-graph/2d/",
   },
   {
     id: 1,
@@ -41,7 +41,7 @@ const graphList = [
     linkDirectionalParticleWidth: 3.5,
     linkColor: "rgba(255,255,255,0.2)",
     is: ForceGraph3D,
-    href: "https://zjfcool.github.io/vue-force-graph-3d/",
+    href: "https://zjfcool.github.io/vue-force-graph/3d/",
   },
   {
     id: 2,
@@ -50,12 +50,12 @@ const graphList = [
     linkColor: "rgba(255,255,255,0.2)",
     nodeAutoColorBy: "id",
     is: ForceGraphVR,
-    href: "https://zjfcool.github.io/vue-force-graph-vr/",
+    href: "https://zjfcool.github.io/vue-force-graph/vr/",
   },
   {
     id: 3,
     name: "vue-force-graph-ar",
-    href: "https://zjfcool.github.io/vue-force-graph-ar/",
+    href: "https://zjfcool.github.io/vue-force-graph/ar/",
     // is: ForceGraphAR,
   },
 ];

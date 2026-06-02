@@ -17,6 +17,6 @@ import type { ForceGraph3DExpose } from "vue-force-graph-3d";
 import NoteMessage from "@/components/NoteMessage.vue";
 const graph = ref<ForceGraph3DExpose>();
 onMounted(() => {
-  graph.value?.jsonUrl("/vue-force-graph-3d/miserables.json");
+  graph.value?.jsonUrl("/vue-force-graph/3d/miserables.json");
 });
 </script>

@@ -18,7 +18,7 @@ const graph = ref<ForceGraph3DExpose>();
 const graphData = shallowRef<ForceGraph3DData>();
 
 onMounted(async () => {
-  const res = await fetch("/vue-force-graph-3d/miserables.json");
+  const res = await fetch("/vue-force-graph/3d/miserables.json");
   const data = await res.json();
   graphData.value = data;
   const composer = graph.value?.postProcessingComposer();

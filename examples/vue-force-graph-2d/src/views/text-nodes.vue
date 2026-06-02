@@ -56,7 +56,7 @@ const nodePointerAreaPaintHandle = (
   }
 };
 
-fetch("/vue-force-graph-2d/miserables.json")
+fetch("/vue-force-graph/2d/miserables.json")
   .then((res) => res.json())
   .then((data) => {
     graphData.value = data;

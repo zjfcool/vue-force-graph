@@ -49,7 +49,7 @@ const nodeThreeObjectHandle = (node: ForceGraph3DNodeObject) => {
 // graph config
 const graph = ref<ForceGraph3DExpose>();
 const graphData = shallowRef<ForceGraph3DData>();
-fetch("/vue-force-graph-3d/yarn.lock")
+fetch("/vue-force-graph/3d/yarn.lock")
   .then((r) => r.text())
   .then((text) => {
     // @ts-ignore

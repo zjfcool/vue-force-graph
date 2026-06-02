@@ -23,7 +23,7 @@ const imgs = [
   "tiger.jpg",
   "whale.jpg",
 ].map((src) => {
-  return `/vue-force-graph-3d/imgs/${src}`;
+  return `/vue-force-graph/3d/imgs/${src}`;
 });
 const nodeThreeObjectHandle = ({ img }: ForceGraph3DNodeObject) => {
   const imgTexture = new THREE.TextureLoader().load(`${img}`);

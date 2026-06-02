@@ -56,7 +56,7 @@ onBeforeUnmount(() => {
   gui.destroy();
 });
 
-fetch("/vue-force-graph-2d/d3-dependencies.csv")
+fetch("/vue-force-graph/2d/d3-dependencies.csv")
   .then((r) => r.text())
   .then(csvParse)
   .then((data) => {

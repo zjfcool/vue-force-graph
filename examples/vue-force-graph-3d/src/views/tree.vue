@@ -55,7 +55,7 @@ gui
 
 // graph config
 const NODE_REL_SIZE = 1;
-fetch("/vue-force-graph-3d/d3-dependencies.csv")
+fetch("/vue-force-graph/3d/d3-dependencies.csv")
   .then((r) => r.text())
   .then(csvParse)
   .then((data) => {

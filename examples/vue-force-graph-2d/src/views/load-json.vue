@@ -19,7 +19,7 @@ const linkColorHandle = () => "rgba(255,255,255,0.2)";
 
 const graphData = shallowRef<ForceGraph2DData>();
 onMounted(() => {
-  fetch("/vue-force-graph-2d/miserables.json")
+  fetch("/vue-force-graph/2d/miserables.json")
     .then((res) => res.json())
     .then((data) => {
       graphData.value = data;

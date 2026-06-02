@@ -20,7 +20,7 @@ const nodeLabelHandle = (node: ForceGraph2DNodeObject) => {
   return `${node.user}: ${node.description}`;
 };
 const linkColorHandle = () => "rgba(255,255,255,0.2)";
-fetch("/vue-force-graph-2d/blocks.json")
+fetch("/vue-force-graph/2d/blocks.json")
   .then((res) => res.json())
   .then((data) => {
     graphData.value = data;

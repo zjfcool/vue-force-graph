@@ -17,7 +17,7 @@ import type { ForceGraph2DNodeObject, ForceGraph2DExpose } from "vue-force-graph
 const graphData = shallowRef({ nodes: [], links: [] });
 const graph = ref<ForceGraph2DExpose>();
 onMounted(async () => {
-  const res = await fetch("/vue-force-graph-2d/miserables.json");
+  const res = await fetch("/vue-force-graph/2d/miserables.json");
   const data = await res.json();
   graphData.value = data;
 });

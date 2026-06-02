@@ -24,7 +24,7 @@ const imgs = [
   "whale.jpg",
 ].map((src) => {
   const img = new Image();
-  img.src = `/vue-force-graph-2d/imgs/${src}`;
+  img.src = `/vue-force-graph/2d/imgs/${src}`;
   return img;
 });
 const linkColorHandle = () => "rgba(255,255,255,0.2)";

@@ -15,7 +15,7 @@ const nodeLabelHandle = (node: ForceGraph3DNodeObject) => `${node.user}: ${node.
 const nodeClickHandle = (node: ForceGraph3DNodeObject) =>
   window.open(`https://bl.ocks.org/${node.user}/${node.id}`, "_blank");
 onMounted(async () => {
-  const res = await fetch("/vue-force-graph-3d/blocks.json");
+  const res = await fetch("/vue-force-graph/3d/blocks.json");
   graphData.value = await res.json();
 });
 </script>

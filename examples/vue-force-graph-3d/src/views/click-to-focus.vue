@@ -29,6 +29,6 @@ const nodeClickHandle = (node: ForceGraph3DNodeObject) => {
   );
 };
 onMounted(() => {
-  graph.value?.jsonUrl("/vue-force-graph-3d/miserables.json");
+  graph.value?.jsonUrl("/vue-force-graph/3d/miserables.json");
 });
 </script>

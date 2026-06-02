@@ -65,7 +65,7 @@ const nodeClickHandle = (node: ForceGraph2DNodeObject) => {
 const nodeColorHandle = (node: ForceGraph2DNodeObject) =>
   !node.childLinks.length ? "green" : node.collapsed ? "red" : "yellow";
 onMounted(() => {
-  fetch("/vue-force-graph-2d/d3-dependencies.csv")
+  fetch("/vue-force-graph/2d/d3-dependencies.csv")
     .then((r) => r.text())
     .then(csvParse)
     .then((data) => {

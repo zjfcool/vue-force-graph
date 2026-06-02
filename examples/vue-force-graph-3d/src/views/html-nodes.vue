@@ -25,7 +25,7 @@ const nodeThreeObjectHandle = (node: ForceGraph3DNodeObject) => {
 };
 
 onMounted(async () => {
-  const res = await fetch("/vue-force-graph-3d/miserables.json");
+  const res = await fetch("/vue-force-graph/3d/miserables.json");
   graphData.value = await res.json();
 });
 </script>

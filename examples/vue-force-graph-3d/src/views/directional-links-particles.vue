@@ -15,7 +15,7 @@ const graphData = shallowRef<ForceGraph3DData>();
 const linkDirectionalParticleSpeedHandle = (d: ForceGraph3DLinkObject) => d.value * 0.001;
 
 onMounted(async () => {
-  const res = await fetch("/vue-force-graph-3d/miserables.json");
+  const res = await fetch("/vue-force-graph/3d/miserables.json");
   const data = await res.json();
   graphData.value = data;
 });

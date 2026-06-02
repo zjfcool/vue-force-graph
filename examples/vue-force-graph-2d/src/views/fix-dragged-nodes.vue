@@ -18,7 +18,7 @@ const nodeDragEndHandle = (node: ForceGraph2DNodeObject) => {
   node.fx = node.x;
   node.fy = node.y;
 };
-fetch("/vue-force-graph-2d/miserables.json")
+fetch("/vue-force-graph/2d/miserables.json")
   .then((res) => res.json())
   .then((data) => {
     graphData.value = data;

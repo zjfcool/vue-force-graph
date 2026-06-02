@@ -30,7 +30,7 @@ const graphData = shallowRef<ForceGraph2DData>();
 const graph = ref<ForceGraph2DExpose>();
 const linkColorHandle = () => "rgba(255,255,255,0.2)";
 let isZoomToFit = false;
-fetch("/vue-force-graph-2d/yarn.lock")
+fetch("/vue-force-graph/2d/yarn.lock")
   .then((r) => r.text())
   .then((text) => {
     // @ts-ignore

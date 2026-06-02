@@ -24,7 +24,7 @@ const nodeThreeObjectHandle = (node: any) => {
 };
 
 onMounted(() => {
-  graph.value?.jsonUrl("/vue-force-graph-3d/miserables.json");
+  graph.value?.jsonUrl("/vue-force-graph/3d/miserables.json");
 
   // Spread nodes a little wider
   graph.value?.d3Force("charge")?.strength(-120);

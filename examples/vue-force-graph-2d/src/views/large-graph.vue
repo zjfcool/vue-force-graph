@@ -22,7 +22,7 @@ window.devicePixelRatio = 1; // use standard resolution in retina displays
 const graphData = shallowRef<ForceGraph2DData>();
 const graph = ref<ForceGraph2DExpose>();
 const linkColorHandle = () => "rgba(255,255,255,0.065)";
-fetch("/vue-force-graph-2d/mplate.mtx")
+fetch("/vue-force-graph/2d/mplate.mtx")
   .then((res) => res.text())
   .then((mtxData) => {
     let nodeSet = new Set();

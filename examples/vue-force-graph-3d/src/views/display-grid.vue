@@ -86,7 +86,7 @@ const graphDataList = shallowRef([
   },
 ]);
 onMounted(async () => {
-  const res = await fetch("/vue-force-graph-3d/blocks.json");
+  const res = await fetch("/vue-force-graph/3d/blocks.json");
   graphDataList.value[1].graphData = await res.json();
   graphDataList.value = [...graphDataList.value];
 });

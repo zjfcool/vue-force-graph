@@ -23,7 +23,7 @@ const nodeDragEndHandle = (node: ForceGraph3DNodeObject) => {
   node.fy = node.y;
   node.fz = node.z;
 };
-fetch("/vue-force-graph-3d/miserables.json")
+fetch("/vue-force-graph/3d/miserables.json")
   .then((res) => res.json())
   .then((data) => {
     graphData.value = data;
