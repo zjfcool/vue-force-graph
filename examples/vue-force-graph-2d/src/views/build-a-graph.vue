@@ -33,7 +33,7 @@ import type {
   ForceGraph2DLinkObject,
   ForceGraph2DNodeObject,
 } from "vue-force-graph-2d";
-import { ref, shallowRef, watch } from "vue";
+import { ref, shallowRef } from "vue";
 import NoteMessage from "@/components/NoteMessage.vue";
 
 let nodeIdCounter = 0,

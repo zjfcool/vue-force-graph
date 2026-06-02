@@ -1,5 +1,6 @@
 <template>
   <ForceGraph2D
+    ref="graph"
     :graph-data="graphData"
     :node-rel-size="7"
     :link-color="linkColorHandle"

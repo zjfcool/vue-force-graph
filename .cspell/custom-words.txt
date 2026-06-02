@@ -15,6 +15,7 @@ positionin
 radialin
 Subdeps
 untoggle
+WASD
 webgl
 zjfcool
 zout

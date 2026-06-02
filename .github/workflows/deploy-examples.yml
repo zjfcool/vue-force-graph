@@ -1,0 +1,61 @@
+name: Deploy examples to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    # 当任意 example 目录下的文件或本 workflow 文件变更时触发
+    paths:
+      - "examples/**"
+      - ".github/workflows/deploy-examples.yml"
+    # 允许手动触发
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 25
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build all examples
+        # 假设该命令会为每个 example 生成 dist 目录（如 examples/xxx/dist/）
+        run: pnpm run build:examples
+
+      - name: Prepare docs folder for GitHub Pages
+        run: |
+          rm -rf docs          # 清空旧内容
+          mkdir -p docs
+          # 遍历所有 examples/*/dist 目录
+          for dist_dir in examples/*/dist; do
+            if [ -d "$dist_dir" ]; then
+              # 提取 example 名称（即 dist 所在目录的目录名）
+              example_name=$(basename $(dirname "$dist_dir"))
+              target_dir="docs/$example_name"
+              mkdir -p "$target_dir"
+              cp -r "$dist_dir"/* "$target_dir/"
+              echo "✅ Copied $dist_dir -> $target_dir"
+            else
+              echo "⚠️  No dist directory found in $(dirname "$dist_dir")"
+            fi
+          done
+          # 创建 .nojekyll 文件，防止 GitHub Pages 忽略下划线开头的文件
+          touch docs/.nojekyll
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          publish_branch: gh-pages # 推送到 gh-pages 分支（GitHub Pages 源）

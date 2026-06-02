@@ -12,5 +12,6 @@
   transform: translateX(-50%);
   text-align: center;
   color: silver;
+  z-index: 1;
 }
 </style>

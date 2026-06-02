@@ -66,8 +66,8 @@ importers:
         specifier: ^3.5.35
         version: 3.5.35(typescript@6.0.3)
       vue-force-graph:
-        specifier: workspace:*
-        version: link:../../packages/vue-force-graph
+        specifier: ^1.1.0
+        version: 1.1.0(aframe@1.7.1)(vue@3.5.35(typescript@6.0.3))
     devDependencies:
       '@types/node':
         specifier: ^24.12.4
@@ -94,8 +94,8 @@ importers:
         specifier: ^3.5.35
         version: 3.5.35(typescript@6.0.3)
       vue-force-graph-2d:
-        specifier: workspace:*
-        version: link:../../packages/vue-force-graph-2d
+        specifier: ^1.1.0
+        version: 1.1.0(vue@3.5.35(typescript@6.0.3))
       vue-router:
         specifier: ^5.1.0
         version: 5.1.0(@vue/compiler-sfc@3.5.35)(vite@8.0.14(@types/node@24.12.4)(yaml@2.9.0))(vue@3.5.35(typescript@6.0.3))
@@ -121,12 +121,15 @@ importers:
 
   examples/vue-force-graph-3d:
     dependencies:
+      three:
+        specifier: 0.184.0
+        version: 0.184.0
       vue:
         specifier: ^3.5.35
         version: 3.5.35(typescript@6.0.3)
       vue-force-graph-3d:
-        specifier: workspace:*
-        version: link:../../packages/vue-force-graph-3d
+        specifier: ^1.1.0
+        version: 1.1.0(vue@3.5.35(typescript@6.0.3))
       vue-router:
         specifier: ^5.1.0
         version: 5.1.0(@vue/compiler-sfc@3.5.35)(vite@8.0.14(@types/node@24.12.4)(yaml@2.9.0))(vue@3.5.35(typescript@6.0.3))
@@ -2581,6 +2584,31 @@ packages:
   vscode-uri@3.1.0:
     resolution: {integrity: sha512-/BpdSx+yCQGnCvecbyXdxHDkuk55/G3xwnC0GqY4gmQ3j+A+g8kzzgB4Nk/SINjqn6+waqw3EgbVF2QKExkRxQ==}
 
+  vue-force-graph-2d@1.1.0:
+    resolution: {integrity: sha512-Sqm+m2ZhUQC5PMXk/Hj7RUCtVe+PcuHHZ+AVTZe7RrA6lBZu2HiN9UieKNEofj6ieeBDcKa7MSNjPMBcg6y1LA==}
+    peerDependencies:
+      vue: ^3.5.34
+
+  vue-force-graph-3d@1.1.0:
+    resolution: {integrity: sha512-VaMMMRrNTUzkNKAi857arb7FxEs5TZNG+QGv0XK6Q2FfvJMm5/McUI94IudJafxrKfGA9n0aqKc2yNc5Gg1EXg==}
+    peerDependencies:
+      vue: ^3.5.34
+
+  vue-force-graph-ar@1.1.0:
+    resolution: {integrity: sha512-s2Sai3bAFCU5Jd6zXMAa69p5QMEA7qf4wJUdfgMpFhbK/dGvnobcDou+kj3hxNkyYiL2fPYRvwUdtBjAliOcyQ==}
+    peerDependencies:
+      vue: ^3.5.34
+
+  vue-force-graph-vr@1.1.0:
+    resolution: {integrity: sha512-BzilsThxsKp3GLtPz6LWuMXmvhu6mZsZ0roR03+99iY4rDAwd4Ubf6gWh1q9dMuLt3N85nuypw5CQhaZ9VjdhA==}
+    peerDependencies:
+      vue: ^3.5.34
+
+  vue-force-graph@1.1.0:
+    resolution: {integrity: sha512-BDZuFqmPlBDf733PZ8UceyqVSF9pWgXPGZYRytA2sUgm/8AcILrcm6nCsRmMv+fkeAvCz6OekQmI4Mupgsl5pg==}
+    peerDependencies:
+      vue: ^3.5.34
+
   vue-router@5.1.0:
     resolution: {integrity: sha512-HAbiLzLEHQwxPgvsbOJDAwtavszEgLwri6XfyrsPECIFez8+59xc9LofWVdc/HEaSRT822lJ8H9Ns38VVond5g==}
     peerDependencies:
@@ -4867,6 +4895,43 @@ snapshots:
   vscode-languageserver-textdocument@1.0.12: {}
 
   vscode-uri@3.1.0: {}
+
+  vue-force-graph-2d@1.1.0(vue@3.5.35(typescript@6.0.3)):
+    dependencies:
+      force-graph: 1.51.4
+      vue: 3.5.35(typescript@6.0.3)
+
+  vue-force-graph-3d@1.1.0(vue@3.5.35(typescript@6.0.3)):
+    dependencies:
+      3d-force-graph: 1.80.0
+      vue: 3.5.35(typescript@6.0.3)
+
+  vue-force-graph-ar@1.1.0(aframe@1.7.1)(vue@3.5.35(typescript@6.0.3)):
+    dependencies:
+      3d-force-graph-ar: 1.10.0(aframe@1.7.1)(three@0.184.0)
+      vue: 3.5.35(typescript@6.0.3)
+    transitivePeerDependencies:
+      - aframe
+      - three
+
+  vue-force-graph-vr@1.1.0(aframe@1.7.1)(vue@3.5.35(typescript@6.0.3)):
+    dependencies:
+      3d-force-graph-vr: 3.1.1(aframe@1.7.1)(three@0.184.0)
+      vue: 3.5.35(typescript@6.0.3)
+    transitivePeerDependencies:
+      - aframe
+      - three
+
+  vue-force-graph@1.1.0(aframe@1.7.1)(vue@3.5.35(typescript@6.0.3)):
+    dependencies:
+      vue: 3.5.35(typescript@6.0.3)
+      vue-force-graph-2d: 1.1.0(vue@3.5.35(typescript@6.0.3))
+      vue-force-graph-3d: 1.1.0(vue@3.5.35(typescript@6.0.3))
+      vue-force-graph-ar: 1.1.0(aframe@1.7.1)(vue@3.5.35(typescript@6.0.3))
+      vue-force-graph-vr: 1.1.0(aframe@1.7.1)(vue@3.5.35(typescript@6.0.3))
+    transitivePeerDependencies:
+      - aframe
+      - three
 
   vue-router@5.1.0(@vue/compiler-sfc@3.5.35)(vite@8.0.14(@types/node@24.12.4)(yaml@2.9.0))(vue@3.5.35(typescript@6.0.3)):
     dependencies:

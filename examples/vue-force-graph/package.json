@@ -11,7 +11,7 @@
   "dependencies": {
     "aframe": "^1.7.1",
     "vue": "^3.5.35",
-    "vue-force-graph": "workspace:*"
+    "vue-force-graph": "^1.1.0"
   },
   "devDependencies": {
     "@types/node": "^24.12.4",

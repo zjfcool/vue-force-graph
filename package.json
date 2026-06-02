@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "turbo run build",
+    "build:examples": "turbo run build --filter=./examples/vue-force-graph*",
     "dev": "turbo run dev",
     "dev:examples": "turbo run dev --filter=./examples/vue-force-graph*",
     "dev:2d": "turbo run dev --filter vue-force-graph-2d",

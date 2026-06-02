@@ -1,9 +1,15 @@
 <template>
-  <ForceGraph3D background-color="#101020" :graph-data="graphData"></ForceGraph3D>
+  <ForceGraph3D
+    background-color="#101020"
+    :graph-data="graphData"
+    :link-directional-arrow-length="3.5"
+    :link-directional-arrow-rel-pos="1"
+    :link-curvature="0.25"
+  ></ForceGraph3D>
 </template>
 <script setup lang="ts">
 // Random tree
-const N = 300;
+const N = 40;
 const graphData = {
   nodes: [...Array(N).keys()].map((i) => ({ id: i })),
   links: [...Array(N).keys()]
