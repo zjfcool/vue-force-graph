@@ -1,0 +1,1 @@
+import{B as e,I as t,U as n,W as r,Y as i,q as a}from"./index-Amye3fr2.js";var o=e({__name:`async-load`,setup(e){let o=i();return n(()=>{o.value?.jsonUrl(`/vue-force-graph-3d/miserables.json`)}),(e,n)=>{let i=a(`ForceGraph3D`);return r(),t(i,{ref_key:`graph`,ref:o,"background-color":`#101020`,"node-label":`id`,"node-auto-color-by":`group`},null,512)}}});export{o as default};

@@ -1,0 +1,1 @@
+function e(e=300,t=!1){return{nodes:[...Array(e).keys()].map(e=>({id:e})),links:[...Array(e).keys()].filter(e=>e).map(e=>({[t?`target`:`source`]:e,[t?`source`:`target`]:Math.round(Math.random()*(e-1))}))}}export{e as t};
