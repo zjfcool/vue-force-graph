@@ -9,7 +9,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@ar-js-org/ar.js": "^3.4.8",
     "vue": "^3.5.34",
     "vue-force-graph-ar": "^1.1.0",
     "vue-router": "^5.1.0"
