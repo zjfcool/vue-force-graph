@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 
 export const routes = [
   {
@@ -163,6 +163,6 @@ export const routes = [
   },
 ];
 export default createRouter({
-  history: createWebHistory("/vue-force-graph/3d/"),
+  history: createWebHashHistory("/vue-force-graph/3d/"),
   routes,
 });

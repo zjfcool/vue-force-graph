@@ -1,10 +1,18 @@
 # vue-force-graph-ar
 
+[![npm version](https://img.shields.io/npm/v/vue-force-graph-ar)](https://www.npmjs.com/package/vue-force-graph-ar)
+
 A Vue component for rendering AR force directed graphs, powered by the [3d-force-graph-ar](https://github.com/vasturiano/3d-force-graph-ar) library.
 
 <p align="center">
      <a href="https://zjfcool.github.io/vue-force-graph/ar/"><img width="80%" src="https://zjfcool.github.io/vue-force-graph/ar/preview.png"></a>
 </p>
+
+Other renderers:
+
+- [vue-force-graph-2d ![npm version](https://img.shields.io/npm/v/vue-force-graph-2d)](https://www.npmjs.com/package/vue-force-graph-2d)
+- [vue-force-graph-3d ![npm version](https://img.shields.io/npm/v/vue-force-graph-3d)](https://www.npmjs.com/package/vue-force-graph-3d)
+- [vue-force-graph-vr ![npm version](https://img.shields.io/npm/v/vue-force-graph-vr)](https://www.npmjs.com/package/vue-force-graph-vr)
 
 ## Examples
 

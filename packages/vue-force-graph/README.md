@@ -1,13 +1,15 @@
 # vue-force-graph
 
+[![npm version](https://img.shields.io/npm/v/vue-force-graph)](https://www.npmjs.com/package/vue-force-graph)
+
 Vue components for 2D, 3D, VR and AR force‑directed graphs.
 
 Available as four standalone packages:
 
-- `vue-force-graph-2d`
-- `vue-force-graph-3d`
-- `vue-force-graph-vr`
-- `vue-force-graph-ar`
+- [vue-force-graph-2d ![npm version](https://img.shields.io/npm/v/vue-force-graph-2d)](https://www.npmjs.com/package/vue-force-graph-2d)
+- [vue-force-graph-3d ![npm version](https://img.shields.io/npm/v/vue-force-graph-3d)](https://www.npmjs.com/package/vue-force-graph-3d)
+- [vue-force-graph-vr ![npm version](https://img.shields.io/npm/v/vue-force-graph-vr)](https://www.npmjs.com/package/vue-force-graph-vr)
+- [vue-force-graph-ar ![npm version](https://img.shields.io/npm/v/vue-force-graph-ar)](https://www.npmjs.com/package/vue-force-graph-ar)
 
 **Strongly recommended:** install only the renderer you actually need to keep your bundle small.  
 A `vue-force-graph` meta‑package is also available if you require every mode, but its use is discouraged.
