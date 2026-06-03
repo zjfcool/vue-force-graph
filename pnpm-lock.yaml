@@ -150,6 +150,40 @@ importers:
         specifier: ^3.3.2
         version: 3.3.2(typescript@6.0.3)
 
+  examples/vue-force-graph-vr:
+    dependencies:
+      aframe:
+        specifier: ^1.7.1
+        version: 1.7.1
+      three:
+        specifier: 0.184.0
+        version: 0.184.0
+      vue:
+        specifier: ^3.5.34
+        version: 3.5.35(typescript@6.0.3)
+      vue-force-graph-vr:
+        specifier: ^1.1.0
+        version: 1.1.0(aframe@1.7.1)(three@0.184.0)(vue@3.5.35(typescript@6.0.3))
+      vue-router:
+        specifier: ^5.1.0
+        version: 5.1.0(@vue/compiler-sfc@3.5.35)(vite@8.0.14(@types/node@24.12.4)(yaml@2.9.0))(vue@3.5.35(typescript@6.0.3))
+    devDependencies:
+      '@types/node':
+        specifier: ^24.12.3
+        version: 24.12.4
+      '@vitejs/plugin-vue':
+        specifier: ^6.0.6
+        version: 6.0.7(vite@8.0.14(@types/node@24.12.4)(yaml@2.9.0))(vue@3.5.35(typescript@6.0.3))
+      '@vue/tsconfig':
+        specifier: ^0.9.1
+        version: 0.9.1(typescript@6.0.3)(vue@3.5.35(typescript@6.0.3))
+      vite:
+        specifier: ^8.0.12
+        version: 8.0.14(@types/node@24.12.4)(yaml@2.9.0)
+      vue-tsc:
+        specifier: ^3.2.8
+        version: 3.3.2(typescript@6.0.3)
+
   packages/utils: {}
 
   packages/vue-force-graph:
@@ -4914,7 +4948,7 @@ snapshots:
       - aframe
       - three
 
-  vue-force-graph-vr@1.1.0(aframe@1.7.1)(vue@3.5.35(typescript@6.0.3)):
+  vue-force-graph-vr@1.1.0(aframe@1.7.1)(three@0.184.0)(vue@3.5.35(typescript@6.0.3)):
     dependencies:
       3d-force-graph-vr: 3.1.1(aframe@1.7.1)(three@0.184.0)
       vue: 3.5.35(typescript@6.0.3)
@@ -4928,7 +4962,7 @@ snapshots:
       vue-force-graph-2d: 1.1.0(vue@3.5.35(typescript@6.0.3))
       vue-force-graph-3d: 1.1.0(vue@3.5.35(typescript@6.0.3))
       vue-force-graph-ar: 1.1.0(aframe@1.7.1)(vue@3.5.35(typescript@6.0.3))
-      vue-force-graph-vr: 1.1.0(aframe@1.7.1)(vue@3.5.35(typescript@6.0.3))
+      vue-force-graph-vr: 1.1.0(aframe@1.7.1)(three@0.184.0)(vue@3.5.35(typescript@6.0.3))
     transitivePeerDependencies:
       - aframe
       - three
