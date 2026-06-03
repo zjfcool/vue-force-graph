@@ -4,6 +4,10 @@
 
 A Vue component for rendering VR force-directed graph, powered by the [3d-force-graph-vr](https://github.com/vasturiano/3d-force-graph-vr) library.
 
+<p align="center">
+     <a href="https://zjfcool.github.io/vue-force-graph/vr/"><img width="80%" src="https://zjfcool.github.io/vue-force-graph/vr/preview.png"></a>
+</p>
+
 ## Examples
 
 [Demos](https://zjfcool.github.io/vue-force-graph/vr/)([Source Codes](https://github.com/zjfcool/vue-force-graph/tree/main/examples/vue-force-graph-vr/src/views))
