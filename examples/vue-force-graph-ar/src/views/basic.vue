@@ -6,8 +6,7 @@
     :link-width="3"
     :node-opacity="0.9"
     :link-opacity="0.4"
-    node-color="firebrick"
-    link-color="darkgrey"
+    :link-color="() => 'darkgrey'"
   ></ForceGraphAR>
 </template>
 <script setup lang="ts">
