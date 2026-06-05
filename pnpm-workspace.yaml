@@ -2,7 +2,7 @@ packages:
   - "packages/*"
   - "examples/*"
 overrides:
-  aframe>three-bmfont-text: "dmarcos/three-bmfont-text#eed4878795be9b3e38cf6aec6b903f56acd1f695"
+  "three-bmfont-text": "https://github.com/dmarcos/three-bmfont-text.git#eed4878795be9b3e38cf6aec6b903f56acd1f695"
   three: "0.184.0"
   aframe>three: "0.184.0"
   3d-force-graph>three: "0.184.0"
