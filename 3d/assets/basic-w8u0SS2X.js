@@ -1,0 +1,1 @@
+import{B as e,I as t,W as n,q as r}from"./index-BCCXlKhV.js";var i=300,a=e({__name:`basic`,setup(e){let a={nodes:[...Array(i).keys()].map(e=>({id:e})),links:[...Array(i).keys()].filter(e=>e).map(e=>({source:e,target:Math.round(Math.random()*(e-1))}))};return(e,i)=>{let o=r(`ForceGraph3D`);return n(),t(o,{"background-color":`#101020`,"graph-data":a})}}});export{a as default};

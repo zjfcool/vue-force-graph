@@ -1,0 +1,1 @@
+import{a as e,f as t,l as n,m as r,v as i}from"./index-D3mMffLf.js";import{t as a}from"./utils-DTRNBiJz.js";var o=n({__name:`directional-links-arrows`,setup(n){let o=a(),s=()=>`rgba(255,255,255,0.2)`;return(n,a)=>{let c=r(`ForceGraph2D`);return t(),e(c,{"graph-data":i(o),"link-directional-arrow-length":8,"link-color":s},null,8,[`graph-data`])}}});export{o as default};
