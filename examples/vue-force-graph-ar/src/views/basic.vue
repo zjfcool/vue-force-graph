@@ -46,6 +46,7 @@ const gData = {
 };
 
 onMounted(() => {
+  console.log("mounted", graph.value);
   graph.value
     ?.graphData(gData)
     .nodeRelSize(10)
