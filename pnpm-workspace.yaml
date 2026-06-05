@@ -8,4 +8,5 @@ overrides:
   3d-force-graph>three: "0.184.0"
 blockExoticSubdeps: false
 allowBuilds:
+  core-js: true
   lefthook: true
