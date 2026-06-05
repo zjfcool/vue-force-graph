@@ -23,7 +23,11 @@ const graphData = {
 };
 </script> -->
 <template>
-  <ForceGraphAR ref="graph" :enable-resize="false"></ForceGraphAR>
+  <ForceGraphAR
+    ref="graph"
+    :enable-resize="false"
+    :marker-attrs="{ preset: 'hiro' }"
+  ></ForceGraphAR>
 </template>
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
