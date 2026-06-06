@@ -1,9 +1,12 @@
 <template>
   <ForceGraphAR
     :graph-data="graphData"
+    :link-directional-arrow-length="3.5"
+    :link-directional-arrow-rel-pos="1"
+    :link-curvature="0.25"
     :node-rel-size="10"
-    :link-width="3"
-    :node-opacity="0.9"
+    :link-width="1"
+    :node-opacity="0.8"
     :link-opacity="0.4"
     :node-color="() => 'firebrick'"
     :link-color="() => 'darkgrey'"
@@ -11,7 +14,7 @@
 </template>
 <script setup lang="ts">
 // Random tree
-const N = 200;
+const N = 40;
 const graphData = {
   nodes: [...Array(N).keys()].map((i) => ({ id: i })),
   links: [...Array(N).keys()]
