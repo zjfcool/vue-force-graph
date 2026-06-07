@@ -2,6 +2,7 @@
   <ul class="graph-grid">
     <li class="graph-item" v-for="{ id, ...attrs } in graphDataList" :key="id">
       <ForceGraph2D
+        :ref="id === 4 ? setCircleGraph : undefined"
         background-color="#000011"
         :link-color="linkColorHandle"
         style="width: 100%; height: 100%"
@@ -15,7 +16,10 @@ import { type ForceGraph2DNodeObject, type ForceGraph2DExpose } from "vue-force-
 import { onMounted, ref, shallowRef } from "vue";
 import { genRandomTree } from "@/utils";
 import { forceCollide, forceRadial } from "d3-force";
-const circleGraph = ref<ForceGraph2DExpose[]>([]);
+const circleGraph = ref<ForceGraph2DExpose>();
+function setCircleGraph(el: any) {
+  circleGraph.value = el;
+}
 const curveGraphData = {
   nodes: [...Array(9).keys()].map((i) => ({ id: i })),
   links: [
@@ -114,7 +118,7 @@ function customNodeCanvasObjectHandle(node: ForceGraph2DNodeObject, ctx: CanvasR
   nodePaint(node, getColor(Number(node.id)), ctx);
 }
 function circleGraphResizeHandle({ width, height }: { width: number; height: number }) {
-  const cg = circleGraph.value[0];
+  const cg = circleGraph.value;
   const minW = Math.min(width, height);
 
   cg?.d3Force("center", null)
@@ -158,7 +162,6 @@ const graphDataList = shallowRef([
   {
     id: 4,
     graphData: { ...genRandomTree(300, true), links: [] },
-    ref: "circleGraph",
     onResize: circleGraphResizeHandle,
   },
   {
