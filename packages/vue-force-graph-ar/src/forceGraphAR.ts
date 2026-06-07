@@ -54,6 +54,8 @@ export interface ForceGraphProps<NodeType = {}, LinkType = {}> extends ConfigOpt
   width?: number;
   height?: number;
   backgroundColor?: string;
+  yOffset?: number;
+  glScale?: number;
 
   // Node styling
   nodeRelSize?: number;
