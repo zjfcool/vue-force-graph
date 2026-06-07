@@ -6,11 +6,6 @@ export const routes = [
     name: "Basic",
     component: () => import("../views/basic.vue"),
   },
-  // {
-  //   path: "/display-grid",
-  //   name: "DisplayGrid",
-  //   component: () => import("../views/display-grid.vue"),
-  // },
   {
     path: "/async-load",
     name: "AsyncLoad",
@@ -21,21 +16,6 @@ export const routes = [
     name: "AutoColored",
     component: () => import("../views/auto-colored.vue"),
   },
-  // {
-  //   path: "/bloom-effect",
-  //   name: "BloomEffect",
-  //   component: () => import("../views/bloom-effect.vue"),
-  // },
-  // {
-  //   path: "/camera-auto-orbit",
-  //   name: "CameraAutoOrbit",
-  //   component: () => import("../views/camera-auto-orbit.vue"),
-  // },
-  // {
-  //   path: "/click-to-focus",
-  //   name: "ClickToFocus",
-  //   component: () => import("../views/click-to-focus.vue"),
-  // },
   {
     path: "/collistion-detection",
     name: "CollisionDetection",
@@ -61,46 +41,11 @@ export const routes = [
     name: "DirectionalLinksParticles",
     component: () => import("../views/directional-links-particles.vue"),
   },
-  // {
-  //   path: "/dynamic",
-  //   name: "Dynamic",
-  //   component: () => import("../views/dynamic.vue"),
-  // },
   {
     path: "/emit-particles",
     name: "EmitParticles",
     component: () => import("../views/emit-particles.vue"),
   },
-  // {
-  //   path: "/expandable-nodes",
-  //   name: "ExpandableNodes",
-  //   component: () => import("../views/expandable-nodes.vue"),
-  // },
-  // {
-  //   path: "/fit-to-canvas",
-  //   name: "FitToCanvas",
-  //   component: () => import("../views/fit-to-canvas.vue"),
-  // },
-  // {
-  //   path: "/fix-dragged-nodes",
-  //   name: "FixDraggedNodes",
-  //   component: () => import("../views/fix-dragged-nodes.vue"),
-  // },
-  // {
-  //   path: "/gradient-links",
-  //   name: "GradientLinks",
-  //   component: () => import("../views/gradient-links.vue"),
-  // },
-  // {
-  //   path: "/highlight",
-  //   name: "Highlight",
-  //   component: () => import("../views/highlight.vue"),
-  // },
-  // {
-  //   path: "/html-nodes",
-  //   name: "HtmlNodes",
-  //   component: () => import("../views/html-nodes.vue"),
-  // },
   {
     path: "/img-nodes",
     name: "ImgNodes",
@@ -121,11 +66,6 @@ export const routes = [
     name: "TextNodes",
     component: () => import("../views/text-nodes.vue"),
   },
-  // {
-  //   path: "/tree",
-  //   name: "Tree",
-  //   component: () => import("../views/tree.vue"),
-  // },
 ];
 export default createRouter({
   history: createWebHashHistory("/vue-force-graph/vr/"),

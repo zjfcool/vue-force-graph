@@ -16,7 +16,25 @@ Other renderers:
 
 ## Examples
 
-[Demos](https://zjfcool.github.io/vue-force-graph/ar/)([Source Codes](https://github.com/zjfcool/vue-force-graph/tree/main/examples/vue-force-graph-ar/src/views))
+To load any of the examples below:
+
+1. Open this [hiro marker image](https://ar-js-org.github.io/AR.js/data/images/HIRO.jpg) in your desktop browser.
+2. Open the example on your phone browser, and point it at your desktop screen.
+
+- [Basic](https://zjfcool.github.io/vue-force-graph/ar/#/)([Source Code](https://github.com/zjfcool/vue-force-graph/tree/main/examples/vue-force-graph-ar/src/views/basic.vue))
+- [Large Graph](https://zjfcool.github.io/vue-force-graph/ar/#/large-graph)([Source Code](https://github.com/zjfcool/vue-force-graph/tree/main/examples/vue-force-graph-ar/src/views/large-graph.vue))
+- [Async Load](https://zjfcool.github.io/vue-force-graph/ar/#/async-load/)([Source Code](https://github.com/zjfcool/vue-force-graph/tree/main/examples/vue-force-graph-ar/src/views/async-load.vue))
+- [Auto Colored](https://zjfcool.github.io/vue-force-graph/ar/#/auto-colored/)([Source Code](https://github.com/zjfcool/vue-force-graph/tree/main/examples/vue-force-graph-ar/src/views/auto-colored.vue))
+- [Collistion Detection](https://zjfcool.github.io/vue-force-graph/ar/#/collistion-detection/)([Source Code](https://github.com/zjfcool/vue-force-graph/tree/main/examples/vue-force-graph-ar/src/views/collistion-detection.vue))
+- [Curved Links](https://zjfcool.github.io/vue-force-graph/ar/#/curved-links)([Source Code](https://github.com/zjfcool/vue-force-graph/tree/main/examples/vue-force-graph-ar/src/views/curved-links.vue))
+- [Custom Node Geometry](https://zjfcool.github.io/vue-force-graph/ar/#/custom-node-geometry)([Source Code](https://github.com/zjfcool/vue-force-graph/tree/main/examples/vue-force-graph-ar/src/views/custom-node-geometry.vue))
+- [Directional Links Arrows](https://zjfcool.github.io/vue-force-graph/ar/#/directional-links-arrows)([Source Code](https://github.com/zjfcool/vue-force-graph/tree/main/examples/vue-force-graph-ar/src/views/directional-links-arrows.vue))
+- [Directional Links Particles](https://zjfcool.github.io/vue-force-graph/ar/#/directional-links-particles)([Source Code](https://github.com/zjfcool/vue-force-graph/tree/main/examples/vue-force-graph-ar/src/views/directional-links-particles.vue))
+- [Dynamic Nodes](https://zjfcool.github.io/vue-force-graph/ar/#/dynamic)([Source Code](https://github.com/zjfcool/vue-force-graph/tree/main/examples/vue-force-graph-ar/src/views/dynamic.vue))
+- [Emit Particles](https://zjfcool.github.io/vue-force-graph/ar/#/emit-particles)([Source Code](https://github.com/zjfcool/vue-force-graph/tree/main/examples/vue-force-graph-ar/src/views/emit-particles.vue))
+- [Img Nodes](https://zjfcool.github.io/vue-force-graph/ar/#/img-nodes)([Source Code](https://github.com/zjfcool/vue-force-graph/tree/main/examples/vue-force-graph-ar/src/views/img-nodes.vue))
+- [Text Links](https://zjfcool.github.io/vue-force-graph/ar/#/text-links)([Source Code](https://github.com/zjfcool/vue-force-graph/tree/main/examples/vue-force-graph-ar/src/views/text-links.vue))
+- [Text Nodes](https://zjfcool.github.io/vue-force-graph/ar/#/text-nodes)([Source Code](https://github.com/zjfcool/vue-force-graph/tree/main/examples/vue-force-graph-ar/src/views/text-nodes.vue))
 
 ## Quick start
 
