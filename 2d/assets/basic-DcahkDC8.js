@@ -1,0 +1,1 @@
+import{a as e,b as t,g as n,l as r,p as i}from"./index-DAyRpXRz.js";import{t as a}from"./utils-DTRNBiJz.js";var o=r({__name:`basic`,setup(r){let o=a(300),s=()=>`rgba(255,255,255,0.2)`;return(r,a)=>{let c=n(`ForceGraph2D`);return i(),e(c,{"graph-data":t(o),"link-directional-particles":2,"link-color":s},null,8,[`graph-data`])}}});export{o as default};
