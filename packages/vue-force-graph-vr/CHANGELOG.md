@@ -1,5 +1,11 @@
 # vue-force-graph-vr
 
+## 1.1.1
+
+### Patch Changes
+
+- update docs
+
 ## 1.1.0
 
 ### Minor Changes

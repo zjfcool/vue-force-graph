@@ -1,6 +1,6 @@
 {
   "name": "vue-force-graph-vr",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A Vue component for rendering VR force-directed graph, powered by the 3d-force-graph-vr library.",
   "keywords": [
     "3d",

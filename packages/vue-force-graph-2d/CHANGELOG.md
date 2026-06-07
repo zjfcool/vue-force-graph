@@ -1,5 +1,11 @@
 # vue-force-graph-2d
 
+## 1.1.1
+
+### Patch Changes
+
+- update docs
+
 ## 1.1.0
 
 ### Minor Changes
