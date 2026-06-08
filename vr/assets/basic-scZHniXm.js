@@ -1,0 +1,1 @@
+import{S as e,b as t,g as n,w as r}from"./index-1k3RWyVp.js";var i=300,a=t({__name:`basic`,setup(t){let a={nodes:[...Array(i).keys()].map(e=>({id:e})),links:[...Array(i).keys()].filter(e=>e).map(e=>({source:e,target:Math.round(Math.random()*(e-1))}))};return(t,i)=>{let o=r(`ForceGraphVR`);return e(),n(o,{"background-color":`#101020`,"graph-data":a})}}});export{a as default};
