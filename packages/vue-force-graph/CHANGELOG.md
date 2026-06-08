@@ -1,5 +1,19 @@
 # vue-force-graph
 
+## 1.2.0
+
+### Minor Changes
+
+- 9a05e6f: add resizeDebounceTime, resizeObserveElement prop
+
+### Patch Changes
+
+- Updated dependencies [9a05e6f]
+  - vue-force-graph-2d@1.2.0
+  - vue-force-graph-3d@1.2.0
+  - vue-force-graph-ar@1.2.0
+  - vue-force-graph-vr@1.2.0
+
 ## 1.1.1
 
 ### Patch Changes
