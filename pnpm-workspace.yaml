@@ -9,3 +9,9 @@ overrides:
 blockExoticSubdeps: false
 allowBuilds:
   lefthook: true
+minimumReleaseAgeExclude:
+  - vue-force-graph
+  - vue-force-graph-3d
+  - vue-force-graph-2d
+  - vue-force-graph-ar
+  - vue-force-graph-vr
