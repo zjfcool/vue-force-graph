@@ -12,7 +12,7 @@
     "aframe": "^1.7.1",
     "three": "0.184.0",
     "vue": "^3.5.34",
-    "vue-force-graph-vr": "workspace:*",
+    "vue-force-graph-vr": "^1.2.0",
     "vue-router": "^5.1.0"
   },
   "devDependencies": {
