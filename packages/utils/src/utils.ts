@@ -9,7 +9,6 @@ import type { App, Plugin } from "vue";
 function createDebouncedResizeObserver(
   callback: (entries: ResizeObserverEntry[], observer: ResizeObserver) => void,
   delay: number = 200,
-  options?: ResizeObserverOptions,
 ) {
   let timer: ReturnType<typeof setTimeout> | null = null;
   let lastEntries: ResizeObserverEntry[] = [];
@@ -33,7 +32,8 @@ function createDebouncedResizeObserver(
   const observer = new ResizeObserver(debouncedHandler);
   return {
     /** 开始观察元素 */
-    observe: (target: Element) => observer.observe(target, options),
+    observe: (target: Element, options?: ResizeObserverOptions) =>
+      observer.observe(target, options),
     /** 停止观察元素 */
     unobserve: (target: Element) => observer.unobserve(target),
     /** 断开所有观察 */
@@ -92,8 +92,6 @@ function effectDynamicProps<
       return cacheProps[p] !== props[p];
     })
     .forEach((p: any) => {
-      // eslint-disable-next-line no-console
-      console.log(`Prop ${p} Changed`);
       if (comp[p] instanceof Function) {
         comp[p](props[p]);
       }

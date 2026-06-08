@@ -8,7 +8,7 @@ export default defineConfig({
   fixedExtension: false,
   deps: {
     onlyBundle: false as const,
+    neverBundle: ["vue"],
   },
   outDir: "dist",
-  external: ["vue"],
 });

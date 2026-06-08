@@ -111,6 +111,8 @@ export interface ForceGraphProps<NodeType = {}, LinkType = {}> extends ConfigOpt
   cooldownTicks?: number;
   cooldownTime?: number;
   enableResize?: boolean;
+  resizeDebounceTime?: number;
+  resizeObserveElement?: HTMLElement;
 }
 
 export interface ForceGraphExpose extends ForceGraphVRInstance {

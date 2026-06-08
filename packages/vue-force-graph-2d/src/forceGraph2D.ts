@@ -134,6 +134,8 @@ export interface ForceGraphProps<NodeType = {}, LinkType = {}> {
   enablePanInteraction?: boolean | ((event: MouseEvent) => boolean);
   enablePointerInteraction?: boolean;
   enableResize?: boolean;
+  resizeDebounceTime?: number;
+  resizeObserveElement?: HTMLElement;
 }
 
 export interface ForceGraphExpose extends ForceGraph {

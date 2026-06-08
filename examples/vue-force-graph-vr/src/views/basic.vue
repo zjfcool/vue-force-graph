@@ -1,9 +1,5 @@
 <template>
-  <ForceGraphVR
-    :enable-resize="false"
-    background-color="#101020"
-    :graph-data="graphData"
-  ></ForceGraphVR>
+  <ForceGraphVR background-color="#101020" :graph-data="graphData"></ForceGraphVR>
 </template>
 <script setup lang="ts">
 // Random tree

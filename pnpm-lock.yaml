@@ -94,8 +94,8 @@ importers:
         specifier: ^3.5.35
         version: 3.5.35(typescript@6.0.3)
       vue-force-graph-2d:
-        specifier: ^1.1.0
-        version: 1.1.0(vue@3.5.35(typescript@6.0.3))
+        specifier: workspace:*
+        version: link:../../packages/vue-force-graph-2d
       vue-router:
         specifier: ^5.1.0
         version: 5.1.0(@vue/compiler-sfc@3.5.35)(vite@8.0.16(@types/node@24.12.4)(yaml@2.9.0))(vue@3.5.35(typescript@6.0.3))
@@ -128,8 +128,8 @@ importers:
         specifier: ^3.5.35
         version: 3.5.35(typescript@6.0.3)
       vue-force-graph-3d:
-        specifier: ^1.1.0
-        version: 1.1.0(vue@3.5.35(typescript@6.0.3))
+        specifier: workspace:*
+        version: link:../../packages/vue-force-graph-3d
       vue-router:
         specifier: ^5.1.0
         version: 5.1.0(@vue/compiler-sfc@3.5.35)(vite@8.0.16(@types/node@24.12.4)(yaml@2.9.0))(vue@3.5.35(typescript@6.0.3))
@@ -162,8 +162,8 @@ importers:
         specifier: ^3.5.34
         version: 3.5.35(typescript@6.0.3)
       vue-force-graph-ar:
-        specifier: ^1.1.0
-        version: 1.1.0(three@0.184.0)(vue@3.5.35(typescript@6.0.3))
+        specifier: workspace:*
+        version: link:../../packages/vue-force-graph-ar
       vue-router:
         specifier: ^5.1.0
         version: 5.1.0(@vue/compiler-sfc@3.5.35)(vite@8.0.16(@types/node@24.12.4)(yaml@2.9.0))(vue@3.5.35(typescript@6.0.3))
@@ -196,8 +196,8 @@ importers:
         specifier: ^3.5.34
         version: 3.5.35(typescript@6.0.3)
       vue-force-graph-vr:
-        specifier: ^1.1.0
-        version: 1.1.0(aframe@1.7.1)(three@0.184.0)(vue@3.5.35(typescript@6.0.3))
+        specifier: workspace:*
+        version: link:../../packages/vue-force-graph-vr
       vue-router:
         specifier: ^5.1.0
         version: 5.1.0(@vue/compiler-sfc@3.5.35)(vite@8.0.16(@types/node@24.12.4)(yaml@2.9.0))(vue@3.5.35(typescript@6.0.3))
@@ -223,7 +223,7 @@ importers:
   packages/vue-force-graph:
     dependencies:
       vue:
-        specifier: ^3.5.34
+        specifier: '>=3'
         version: 3.5.35(typescript@6.0.3)
       vue-force-graph-2d:
         specifier: workspace:*
@@ -244,7 +244,7 @@ importers:
         specifier: ^1.51.4
         version: 1.51.4
       vue:
-        specifier: ^3.5.34
+        specifier: '>=3'
         version: 3.5.35(typescript@6.0.3)
     devDependencies:
       utils:
@@ -257,7 +257,7 @@ importers:
         specifier: 1.80.0
         version: 1.80.0
       vue:
-        specifier: ^3.5.34
+        specifier: '>=3'
         version: 3.5.35(typescript@6.0.3)
     devDependencies:
       utils:
@@ -270,7 +270,7 @@ importers:
         specifier: ^1.10.0
         version: 1.10.0(aframe@1.7.1)(three@0.184.0)
       vue:
-        specifier: ^3.5.34
+        specifier: '>=3'
         version: 3.5.35(typescript@6.0.3)
     devDependencies:
       utils:
@@ -283,7 +283,7 @@ importers:
         specifier: ^3.1.1
         version: 3.1.1(aframe@1.7.1)(three@0.184.0)
       vue:
-        specifier: ^3.5.34
+        specifier: '>=3'
         version: 3.5.35(typescript@6.0.3)
     devDependencies:
       utils:
@@ -2453,8 +2453,8 @@ packages:
     resolution: {integrity: sha512-wK0Ri4fOGjv/XPy8SBHZChl8CM7uMc5VML7SqiQ0zG7+J5Vr+RMQDoHa2CNT6KHUnTGIXH34UDMkPzAUyapBZg==}
     engines: {node: '>=8'}
 
-  three-bmfont-text@https://codeload.github.com/dmarcos/three-bmfont-text/tar.gz/eed4878795be9b3e38cf6aec6b903f56acd1f695:
-    resolution: {gitHosted: true, tarball: https://codeload.github.com/dmarcos/three-bmfont-text/tar.gz/eed4878795be9b3e38cf6aec6b903f56acd1f695}
+  three-bmfont-text@git+https://git@github.com:dmarcos/three-bmfont-text.git#eed4878795be9b3e38cf6aec6b903f56acd1f695:
+    resolution: {commit: eed4878795be9b3e38cf6aec6b903f56acd1f695, repo: git@github.com:dmarcos/three-bmfont-text.git, type: git}
     version: 3.0.0
 
   three-forcegraph@1.43.4:
@@ -2730,39 +2730,12 @@ packages:
 
 snapshots:
 
-  3d-force-graph-ar@1.10.0(aframe@1.7.1):
-    dependencies:
-      aframe-forcegraph-component: 3.3.0(aframe@1.7.1)
-      kapsule: 1.16.3
-    transitivePeerDependencies:
-      - aframe
-      - three
-
   3d-force-graph-ar@1.10.0(aframe@1.7.1)(three@0.184.0):
     dependencies:
       aframe-forcegraph-component: 3.3.0(aframe@1.7.1)(three@0.184.0)
       kapsule: 1.16.3
     transitivePeerDependencies:
       - aframe
-      - three
-
-  3d-force-graph-ar@1.10.0(three@0.184.0):
-    dependencies:
-      aframe-forcegraph-component: 3.3.0(aframe@1.7.1)(three@0.184.0)
-      kapsule: 1.16.3
-    transitivePeerDependencies:
-      - aframe
-      - three
-
-  3d-force-graph-vr@3.1.1(aframe@1.7.1):
-    dependencies:
-      accessor-fn: 1.5.3
-      aframe: 1.7.1
-      aframe-extras: 7.7.0
-      aframe-forcegraph-component: 3.3.0(aframe@1.7.1)
-      kapsule: 1.16.3
-      polished: 4.3.1
-    transitivePeerDependencies:
       - three
 
   3d-force-graph-vr@3.1.1(aframe@1.7.1)(three@0.184.0):
@@ -3653,13 +3626,6 @@ snapshots:
       three: 0.184.0
       three-pathfinding: 1.3.0(three@0.184.0)
 
-  aframe-forcegraph-component@3.3.0(aframe@1.7.1):
-    dependencies:
-      aframe: 1.7.1
-      three-forcegraph: 1.43.4(three@0.184.0)
-    transitivePeerDependencies:
-      - three
-
   aframe-forcegraph-component@3.3.0(aframe@1.7.1)(three@0.184.0):
     dependencies:
       aframe: 1.7.1
@@ -3675,7 +3641,7 @@ snapshots:
       load-bmfont: 1.4.2(debug@4.4.3)
       super-animejs: 3.1.0
       three: 0.184.0
-      three-bmfont-text: https://codeload.github.com/dmarcos/three-bmfont-text/tar.gz/eed4878795be9b3e38cf6aec6b903f56acd1f695
+      three-bmfont-text: git+https://git@github.com:dmarcos/three-bmfont-text.git#eed4878795be9b3e38cf6aec6b903f56acd1f695
     transitivePeerDependencies:
       - supports-color
 
@@ -4839,7 +4805,7 @@ snapshots:
 
   term-size@2.2.1: {}
 
-  three-bmfont-text@https://codeload.github.com/dmarcos/three-bmfont-text/tar.gz/eed4878795be9b3e38cf6aec6b903f56acd1f695:
+  three-bmfont-text@git+https://git@github.com:dmarcos/three-bmfont-text.git#eed4878795be9b3e38cf6aec6b903f56acd1f695:
     dependencies:
       array-shuffle: 1.0.1
       layout-bmfont-text: 1.3.4
@@ -5011,23 +4977,7 @@ snapshots:
 
   vue-force-graph-ar@1.1.0(aframe@1.7.1)(vue@3.5.35(typescript@6.0.3)):
     dependencies:
-      3d-force-graph-ar: 1.10.0(aframe@1.7.1)
-      vue: 3.5.35(typescript@6.0.3)
-    transitivePeerDependencies:
-      - aframe
-      - three
-
-  vue-force-graph-ar@1.1.0(three@0.184.0)(vue@3.5.35(typescript@6.0.3)):
-    dependencies:
-      3d-force-graph-ar: 1.10.0(three@0.184.0)
-      vue: 3.5.35(typescript@6.0.3)
-    transitivePeerDependencies:
-      - aframe
-      - three
-
-  vue-force-graph-vr@1.1.0(aframe@1.7.1)(three@0.184.0)(vue@3.5.35(typescript@6.0.3)):
-    dependencies:
-      3d-force-graph-vr: 3.1.1(aframe@1.7.1)(three@0.184.0)
+      3d-force-graph-ar: 1.10.0(aframe@1.7.1)(three@0.184.0)
       vue: 3.5.35(typescript@6.0.3)
     transitivePeerDependencies:
       - aframe
@@ -5035,7 +4985,7 @@ snapshots:
 
   vue-force-graph-vr@1.1.0(aframe@1.7.1)(vue@3.5.35(typescript@6.0.3)):
     dependencies:
-      3d-force-graph-vr: 3.1.1(aframe@1.7.1)
+      3d-force-graph-vr: 3.1.1(aframe@1.7.1)(three@0.184.0)
       vue: 3.5.35(typescript@6.0.3)
     transitivePeerDependencies:
       - aframe

@@ -39,12 +39,6 @@ export type DagMode = "td" | "bu" | "lr" | "rl" | "zout" | "zin" | "radialout" |
 
 type ForceEngine = "d3" | "ngraph";
 
-// interface ForceFn<NodeType = {}> {
-//   (alpha: number): void;
-//   initialize?: (nodes: NodeObject<NodeType>[], ...args: any[]) => void;
-//   [key: string]: any;
-// }
-
 type Coords = { x: number; y: number; z: number };
 
 type NodePositionUpdateFn = <NodeType = {}>(
@@ -131,6 +125,8 @@ export interface ForceGraphProps<NodeType = {}, LinkType = {}> extends ConfigOpt
   enableNavigationControls?: boolean;
   enablePointerInteraction?: boolean;
   enableResize?: boolean;
+  resizeDebounceTime?: number;
+  resizeObserveElement?: HTMLElement;
 }
 export interface ForceGraphExpose extends ForceGraph3DInstance {
   wrapperElement: Ref<HTMLElement | null>;

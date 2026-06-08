@@ -25,7 +25,7 @@
           :title="route.name"
           >{{ route.name }}</RouterLink
         >
-        <a :href="route.meta.source" target="_blank" title="Source Code" class="icon-source">
+        <a :href="route.meta?.source" target="_blank" title="Source Code" class="icon-source">
           <svg
             t="1780798992808"
             class="icon"

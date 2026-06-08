@@ -12,7 +12,7 @@
     "@ar-js-org/ar.js": "^3.4.8",
     "three": "0.184.0",
     "vue": "^3.5.34",
-    "vue-force-graph-ar": "^1.1.0",
+    "vue-force-graph-ar": "workspace:*",
     "vue-router": "^5.1.0"
   },
   "devDependencies": {

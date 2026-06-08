@@ -6,7 +6,6 @@
     </button>
     <ForceGraphVR
       ref="graph"
-      :enable-resize="false"
       :graph-data="graphData"
       @link-click="linkClickHandle"
       :link-directional-particle-color="linkDirectionalParticleColorHandle"

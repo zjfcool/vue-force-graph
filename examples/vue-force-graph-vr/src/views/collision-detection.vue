@@ -1,7 +1,6 @@
 <template>
   <ForceGraphVR
     ref="graph"
-    :enable-resize="false"
     :graph-data="graphData"
     :cooldown-time="Infinity"
     :d3-alpha-decay="0"

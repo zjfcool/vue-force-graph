@@ -1,7 +1,6 @@
 <template>
   <ForceGraphVR
     ref="graph"
-    :enable-resize="false"
     background-color="#101020"
     node-auto-color-by="group"
     :node-three-object="nodeThreeObjectHandle"

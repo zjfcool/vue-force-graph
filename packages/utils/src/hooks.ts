@@ -8,7 +8,7 @@ import {
   createDebouncedResizeObserver,
 } from "./utils";
 
-import { watchEffect, onMounted, onBeforeUnmount, Ref } from "vue";
+import { watchEffect, onMounted, onBeforeUnmount, Ref, nextTick } from "vue";
 function useForceGraph<F extends (...args: any[]) => any, P extends {}>(
   ForceGraph: F,
   props: P,
@@ -48,25 +48,41 @@ function useForceGraphResizeObserver(
   function resizeHandle(entries: ResizeObserverEntry[]) {
     for (const entry of entries) {
       const { width, height } = entry.contentRect;
+      if (ele.value) {
+        if (entry.target !== ele.value) {
+          ele.value.style.width = width + "px";
+          ele.value.style.height = height + "px";
+        }
+      }
       setGraphRect(width, height);
       if (callback instanceof Function) {
         callback("resize", { width: comp.width(), height: comp.height() });
       }
     }
   }
-  onMounted(() => {
+  function setObserveElementStyle(ele: HTMLElement) {
+    const styleWidth = ele.style.width;
+    const styleHeight = ele.style.height;
+
+    ele.style.width =
+      props.width === undefined ? (styleWidth ? styleWidth : "100%") : props.width + "px";
+    ele.style.height =
+      props.height === undefined ? (styleHeight ? styleHeight : "100%") : props.height + "px";
+  }
+  onMounted(async () => {
     if (!props.enableResize) return;
+    await nextTick();
     if (ele.value) {
-      const styleWidth = ele.value.style.width;
-      const styleHeight = ele.value.style.height;
-      ele.value.style.width =
-        props.width === undefined ? (styleWidth ? styleWidth : "100%") : props.width + "px";
-      ele.value.style.height =
-        props.height === undefined ? (styleHeight ? styleHeight : "100%") : props.height + "px";
-      let { width, height } = ele.value.getBoundingClientRect();
-      setGraphRect(width, height);
-      resizeObserver = createDebouncedResizeObserver(resizeHandle);
-      resizeObserver.observe(ele.value);
+      const resizeObserveElement = props.resizeObserveElement ?? ele.value;
+      if (!(resizeObserveElement instanceof HTMLElement)) {
+        // eslint-disable-next-line no-console
+        console.warn("prop resizeObserveElement must be a  HTMLElement");
+        return;
+      }
+      const resizeDebounceTime = props.resizeDebounceTime ?? 200;
+      setObserveElementStyle(resizeObserveElement);
+      resizeObserver = createDebouncedResizeObserver(resizeHandle, resizeDebounceTime);
+      resizeObserver.observe(resizeObserveElement);
     }
   });
   onBeforeUnmount(() => {

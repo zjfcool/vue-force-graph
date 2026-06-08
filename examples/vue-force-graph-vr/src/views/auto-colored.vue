@@ -1,7 +1,6 @@
 <template>
   <ForceGraphVR
     background-color="#101020"
-    :enable-resize="false"
     node-auto-color-by="group"
     :link-auto-color-by="linkAutoColorByHandle"
     :graph-data="graphData"

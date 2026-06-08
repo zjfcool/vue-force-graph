@@ -20,6 +20,15 @@ export const routes = [
     },
   },
   {
+    path: "/resize-observe-graph",
+    name: "ResizeObserveGraph",
+    component: () => import("../views/resize-observe-graph.vue"),
+    meta: {
+      source:
+        "https://github.com/zjfcool/vue-force-graph/blob/main/examples/vue-force-graph-3d/src/views/resize-observe-graph.vue",
+    },
+  },
+  {
     path: "/async-load",
     name: "AsyncLoad",
     component: () => import("../views/async-load.vue"),

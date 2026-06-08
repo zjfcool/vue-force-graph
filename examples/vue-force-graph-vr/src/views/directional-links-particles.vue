@@ -1,6 +1,5 @@
 <template>
   <ForceGraphVR
-    :enable-resize="false"
     background-color="#101020"
     :graph-data="graphData"
     node-label="id"
