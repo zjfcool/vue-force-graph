@@ -8,6 +8,7 @@ dmarcos
 equi
 hiro
 mplate
+ndotv
 ngraph
 oxfmt
 oxlint

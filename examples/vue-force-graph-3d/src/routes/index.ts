@@ -119,6 +119,15 @@ export const routes = [
     },
   },
   {
+    path: "/custom-node-material",
+    name: "CustomNodeMaterial",
+    component: () => import("../views/custom-node-material.vue"),
+    meta: {
+      source:
+        "https://github.com/zjfcool/vue-force-graph/blob/main/examples/vue-force-graph-3d/src/views/custom-node-material.vue",
+    },
+  },
+  {
     path: "/dag-yarn",
     name: "DagYarn",
     component: () => import("../views/dag-yarn.vue"),
