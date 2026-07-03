@@ -109,7 +109,7 @@ function createDensityMaterial(
   return material;
 }
 const allUniforms: any[] = [];
-const nodeThreeObjectHandle = ({ id }: ForceGraph3DNodeObject) => {
+const nodeThreeObjectHandle = () => {
   const material = createDensityMaterial({
     innerColor: new THREE.Color("#6a9cf0"),
     outerColor: new THREE.Color("#2a4a8c"),
