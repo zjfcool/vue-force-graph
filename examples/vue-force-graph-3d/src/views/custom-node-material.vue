@@ -7,7 +7,6 @@
 </template>
 <script setup lang="ts">
 import * as THREE from "three";
-import type { ForceGraph3DNodeObject } from "vue-force-graph-3d";
 // @ts-ignore
 import { GUI } from "https://esm.sh/dat.gui";
 import { onBeforeUnmount } from "vue";
